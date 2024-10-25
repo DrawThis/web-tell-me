@@ -60,7 +60,6 @@
 			<li>
 				<a href="/acerca-de" data-sveltekit-reload data-sveltekit-preload-data="tap">Acerca de</a>
 			</li>
-			<li><a href="#In Process" data-sveltekit-preload-data="tap">Ajustes</a></li>
 			<li><button on:click={togglePopup2} class="custom-button">Volver</button></li>
 		</ul>
 	</nav>
@@ -128,17 +127,17 @@
 			historia única!
 		</p>
 
-		<br>
-		<br>
+		<br />
+		<br />
 
 		<div class="info-container">
 			<div class="info-box">
 				<Icon icon="uis:layer-group" class="info-logo" />
-				<p class="info-text">Más de 50 niveles disponibles</p>
+				<p class="info-text">Más de 50 niveles disponibles para todos</p>
 			</div>
 			<div class="info-box">
 				<Icon icon="uis:clock-three" class="info-logo" />
-				<p class="info-text">Más de 5 horas de contenido</p>
+				<p class="info-text">Más de 5 horas de contenido para dibujar</p>
 			</div>
 			<div class="info-box">
 				<Icon icon="gridicons:thumbs-up" class="info-logo" />
@@ -227,38 +226,38 @@
 	</section>
 
 	<section class="last">
-		<h2>Algunas implementaciones futuras</h2>
-		<p>
-			En Draw this, se implementaran actualizaciones básicas que permitan un mejor rendimiento de la
-			página, así mismo, satisfacer las necesidades de los usuarios y lograr la mejor calidad,
-			algunas de estas son:
-		</p>
-		<div class="cards">
-			<div class="card">
-				<h4>Inicio de Sesión con Google</h4>
-				<p>
-					En Draw This planteamos la posibilidad de que los usuarios puedan iniciar en Draw This con
-					su cuenta de Google, es decir, su gmail o Correo Electrónico.
-				</p>
+		<h2>Preguntas Frecuentes (FAQ)</h2>
+		<br>
+		<div class="faq-content">
+			<div class="faq-question">
+				<input id="q1" type="checkbox" class="panel" />
+				<div class="plus">+</div>
+				<label for="q1" class="panel-title">¿Necesito tener experiencia previa para unirme al curso?</label>
+				<div class="panel-content">No, Draw This ofrece métodos de aprendizaje flexibles, diseñados para adaptarse tanto a principiantes como a personas con cierta experiencia en dibujo. Esto significa que cualquier usuario, sin importar su nivel, puede participar y beneficiarse del curso.</div>
 			</div>
-			<div class="card">
-				<h4>Sección de Preguntas</h4>
-				<p>
-					Cualquier duda posible que tenga el usuario pensamos resolverla por medio de preguntas
-					frecuentes que tenga la página de Draw This. Estas preguntas serán preescritas y <b
-						>no será posible</b
-					> que los usuarios la pongan por ellos mismos.
-				</p>
+
+			<div class="faq-question">
+				<input id="q2" type="checkbox" class="panel" />
+				<div class="plus">+</div>
+				<label for="q2" class="panel-title">¿Los cursos incluyen correcciones personalizadas?</label>
+				<div class="panel-content">
+					Lamentablemente, Draw This no cuenta actualmente con los recursos necesarios para ofrecer retroalimentación personalizada a los usuarios. Esto se debe a la limitación de personal y herramientas que permitirían una revisión detallada de cada trabajo presentado por los estudiantes.
+				</div>
 			</div>
-			<div class="card">
-				<h4>Ajustes</h4>
-				<p>
-					Se desea una sección en donde se implementen ajustes a la página, esto con el objetivo de
-					tener más versatilidad en Draw This, un ejemplo es agregar el Modo Oscuro.
-				</p>
+
+			<div class="faq-question">
+				<input id="q3" type="checkbox" class="panel" />
+				<div class="plus">+</div>
+				<label for="q3" class="panel-title">¿Se entregará algún certificado al finalizar el curso?</label>
+				<div class="panel-content">
+					Sí, al finalizar el curso, Draw This entregará un certificado, pero este será un reconocimiento simbólico otorgado por la plataforma. El objetivo del certificado es motivar a los usuarios y reconocer su esfuerzo y dedicación al completar todas las lecciones y actividades propuestas.
+				</div>
 			</div>
 		</div>
 	</section>
+	<br>
+	<br>
+	<br>
 </main>
 
 <footer id="contact">

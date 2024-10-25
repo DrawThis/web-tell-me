@@ -5,4 +5,3 @@ export const actions = {
         redirect(302, '/landing-page')
     }
 }
-

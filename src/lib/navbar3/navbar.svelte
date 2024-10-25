@@ -11,7 +11,7 @@
 	const elements = [
 		{
 			id: 'rombo-1',
-			text: '1. Video: Introducción a la Historia del Arte',
+			text: '1. Video: ¿Qué es el Puntillismo?',
 			link: './1'
 		},
 		{
@@ -90,7 +90,7 @@
 	<div class="menu-container">
 		<nav>
 			<img src={logo4} alt="" class="logo" />
-			<div class="lesson">Curso: Historia del Arte</div>
+			<div class="lesson">Curso: Puntillismo</div>
 			<div class="nav-item" id="nav-item-1">
 				<div class="progress-bar" id="progress-bar">
 					<div class="rombo" id="rombo-1">
