@@ -9,12 +9,6 @@
 	});
 </script>
 
-<svelte:head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Historia del Arte</title>
-</svelte:head>
-
 <Nav levelNumber={1} position="rombo-1" />
 
 <div class="container">

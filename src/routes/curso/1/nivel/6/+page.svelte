@@ -2,7 +2,7 @@
 	import './nivel6.css';
 	import Nav from '$lib/navbar1/navbar.svelte';
 	import Next from '$lib/button.svelte';
-	import { venus, brush, circle, eraser, rectangle, triangle } from '$lib/IMAGES/todas';
+	import { venus, brush, eraser } from '$lib/IMAGES/todas';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -12,7 +12,6 @@
 	let canvas: HTMLCanvasElement | null = null;
 	let ctx: CanvasRenderingContext2D | null = null;
 	let toolBtns: NodeListOf<HTMLElement>;
-	let fillColor: HTMLInputElement | null = null;
 	let sizeSlider: HTMLInputElement | null = null;
 	let colorBtns: NodeListOf<HTMLElement>;
 	let colorPicker: HTMLInputElement | null = null;
@@ -37,35 +36,6 @@
 		};
 	};
 
-	const drawRect = (e: MouseEvent) => {
-		if (!ctx || !canvas) return;
-		if (!fillColor?.checked) {
-			ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
-		} else {
-			ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
-		}
-	};
-
-	const drawCircle = (e: MouseEvent) => {
-		if (!ctx) return;
-		ctx.beginPath();
-		const radius = Math.sqrt(
-			Math.pow(prevMouseX - e.offsetX, 2) + Math.pow(prevMouseY - e.offsetY, 2)
-		);
-		ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
-		fillColor?.checked ? ctx.fill() : ctx.stroke();
-	};
-
-	const drawTriangle = (e: MouseEvent) => {
-		if (!ctx) return;
-		ctx.beginPath();
-		ctx.moveTo(prevMouseX, prevMouseY);
-		ctx.lineTo(e.offsetX, e.offsetY);
-		ctx.lineTo(prevMouseX * 2 - e.offsetX, e.offsetY);
-		ctx.closePath();
-		fillColor?.checked ? ctx.fill() : ctx.stroke();
-	};
-
 	const startDraw = (e: MouseEvent) => {
 		if (!ctx) return;
 		isDrawing = true;
@@ -86,20 +56,13 @@
 			ctx.strokeStyle = selectedTool === 'eraser' ? '#fff' : selectedColor;
 			ctx.lineTo(e.offsetX, e.offsetY);
 			ctx.stroke();
-		} else if (selectedTool === 'rectangle') {
-			drawRect(e);
-		} else if (selectedTool === 'circle') {
-			drawCircle(e);
-		} else {
-			drawTriangle(e);
-		}
+		} 
 	};
 
 	onMount(() => {
 		canvas = document.querySelector('canvas');
 		ctx = canvas?.getContext('2d') || null;
 		toolBtns = document.querySelectorAll('.tool');
-		fillColor = document.querySelector('#fill-color') as HTMLInputElement;
 		sizeSlider = document.querySelector('#size-slider') as HTMLInputElement;
 		colorBtns = document.querySelectorAll('.colors .option');
 		colorPicker = document.querySelector('#color-picker') as HTMLInputElement;
@@ -203,12 +166,6 @@
 	});
 </script>
 
-<svelte:head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Historia del Arte</title>
-</svelte:head>
-
 <Nav levelNumber={6} position="square-2" />
 
 <div id="modal" class="modal">
@@ -224,27 +181,6 @@
 <main>
 	<div class="container">
 		<section class="tools-board">
-			<div class="row">
-				<label class="title" for="">Figuras</label>
-				<ul class="options">
-					<li class="option tool" id="rectangle">
-						<img src={ rectangle } alt="" />
-						<span>Rectángulo</span>
-					</li>
-					<li class="option tool" id="circle">
-						<img src={ circle } alt="" />
-						<span>Círculo</span>
-					</li>
-					<li class="option tool" id="triangle">
-						<img src={ triangle } alt="" />
-						<span>Triángulo</span>
-					</li>
-					<li class="option">
-						<input type="checkbox" id="fill-color" />
-						<label for="fill-color">Rellenar figura</label>
-					</li>
-				</ul>
-			</div>
 			<div class="row">
 				<label class="title" for="">Opciones</label>
 				<ul class="options">

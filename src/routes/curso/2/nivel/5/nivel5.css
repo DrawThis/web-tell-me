@@ -41,8 +41,8 @@ body.nivel-5 #circle-2 {
   padding: 10px;
 }
 
-div .text-overlay {
-  padding-right: 40%;
+.text-overlay p {
+  padding-right: 100px;
 }
 
 .buttons {

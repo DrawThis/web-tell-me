@@ -9,22 +9,16 @@
 	});
 </script>
 
-<svelte:head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Pixel Art</title>
-</svelte:head>
-
 <Nav levelNumber={1} position="rombo-1" />
 
 <div class="container">
 	<div class="header">
-		<h1>Vídeo: Pixel Art - Un análisis estilístico</h1>
+		<h1>Vídeo: Como hacer Pixel Art - Guía</h1>
 	</div>
 	<div class="video-container">
 		<iframe
 			title=""
-			src="https://www.youtube.com/embed/TdLYDSbmEP4?si=SB9A9CSixhHOeehA"
+			src="https://www.youtube.com/embed/YyC2i91EwNw"
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 			allowfullscreen

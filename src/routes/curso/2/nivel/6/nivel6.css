@@ -67,7 +67,6 @@ main {
 	gap: 10px;
 	padding: 10px;
 	max-width: 1050px;
-    z-index: 1000;
 }
 
 section {
@@ -141,24 +140,11 @@ section {
 }
 
 .colors .option:nth-child(1) {
-	background-color: #fff;
-	border: 1px solid #bfbfbf;
-}
-
-.colors .option:nth-child(2) {
 	background-color: #000000;
 }
 
-.colors .option:nth-child(3) {
-	background-color: #f3250a;
-}
-
-.colors .option:nth-child(4) {
-	background-color: #07f041;
-}
-
-.colors .option:nth-child(5) {
-	background-color: #4a98f7;
+.colors .option:nth-child(2) {
+	background-color: #0000003d;
 }
 
 .colors .option.selected::before {

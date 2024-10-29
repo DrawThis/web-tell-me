@@ -86,6 +86,12 @@
 	});
 </script>
 
+<svelte:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Historia del Arte</title>
+</svelte:head>
+
 <header>
 	<div class="menu-container">
 		<nav>

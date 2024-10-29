@@ -10,12 +10,6 @@
   });
 </script>
 
-<svelte:head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dibujo Básico</title>
-</svelte:head>
-
 <Nav levelNumber={2} position="circle-1"/>
 
 <div class="container">
@@ -61,58 +55,6 @@
             <img src="https://crehana-blog.imgix.net/media/filer_public/fe/eb/feeb9710-0c24-4ccb-9835-14342f30c8d0/dibujos-sencillos.jpg?auto=format&q=50" alt="">
             <img src="https://crehana-blog.imgix.net/media/filer_public/23/ec/23ecc35e-41aa-4f5f-815c-df1387495d2f/perspectivas-dibujo-aprender-dibujar.jpg?auto=format&q=50" alt="">
             <img src="https://crehana-blog.imgix.net/media/filer_public/d4/6e/d46e9d45-bddf-40f5-98ad-51c0d19e0d9b/cactus.jpg?auto=format&q=50" alt="">
-        </div>
-    </div>
-    <div class="art-container">
-        <br>
-        <div class="conlist">
-            <div class="title">Objetivo del Dibujo Básico:</div>
-            <hr>
-            <br>
-            <div class="list">
-                <ul>
-                    <li><strong>Desarrollar habilidades motoras:</strong> Mejorar el control del lápiz y la precisión.</li>
-                    <br>
-                    <li><strong>Establecer las bases:</strong> Preparar para técnicas avanzadas como retratos, paisajes complejos, o dibujo digital.</li>
-					<br>
-					<li><strong>Estimular la creatividad:</strong> Crear confianza en los estudiantes para plasmar ideas en el papel.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="conlist">
-            <div class="title">Actividades Comunes en el Dibujo Básico</div>
-            <hr>
-            <br>
-            <div class="list">
-                <ul>
-                    <li>Dibujar líneas rectas y curvas repetidamente para ganar precisión.</li>
-					<br>
-					<li>Representar objetos cotidianos como una taza o una pelota descomponiéndolos en sus formas geométricas básicas.</li>
-					<br>
-					<li>Dibujar una esfera o un cubo aplicando sombra para representar la luz desde diferentes ángulos.</li>
-					<br>
-					<li>Dibujar un camino o un grupo de edificios utilizando un punto de referencia.</li>
-					<br>
-					<li>Dibujar rápidamente elementos del entorno para desarrollar agilidad y la memoria</li>
-                </ul>
-            </div>
-            
-        </div>
-        <div class="conlist">
-            <div class="title">Técnicas Clave en el Dibujo Básico</div>
-            <hr>
-            <br>
-            <div class="list">
-                <ul>
-                    <li>Aprender a realizar líneas precisas (rectas y curvas) sin perder fluidez.</li>
-                    <br>
-                    <li>Descomponer objetos complejos en figuras simples como círculos, cuadrados y triángulos.</li>
-                    <br>
-                    <li>Aplicación de técnicas sencillas como el hachurado (líneas paralelas) y el degradado para dar sensación de luz y volumen.</li>
-                    <br>
-                    <li>Realizar dibujos rápidos con pocos detalles ayuda a captar la esencia de lo que se observa sin necesidad de perfeccionismo.</li>
-                </ul>
-            </div>
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <script lang="ts">
     import './nivel2.css'
-    import Nav from '$lib/navbar1/navbar.svelte';
+    import Nav from '$lib/navbar4/navbar.svelte';
     import Next from '$lib/button.svelte';
     import { onMount } from 'svelte';
 
@@ -9,181 +9,119 @@
   });
 </script>
 
-<svelte:head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia del Arte</title>
-</svelte:head>
-
 <Nav levelNumber={2} position="circle-1"/>
 
 <div class="container">
     <div class="text">
-      <h1>El Arte Prehistórico</h1>
+      <h1>El Pixel Art</h1>
       <hr>
       <br>
-      <p>El <strong>arte prehistórico</strong> es el tipo de arte que hicieron los primeros seres humanos hace miles de años, <strong>mucho antes de que existieran los libros o la escritura.</strong> Este arte incluye dibujos y pinturas en las paredes de las cuevas, esculturas y objetos decorativos. Usaban materiales naturales como tierra, plantas y minerales para crear colores y pintar animales, personas y símbolos.</p>
+      <p>El <strong>pixel art</strong> es una técnica de arte digital que consiste en crear imágenes manipulando <strong>cada píxel de forma individual</strong>, lo que da como resultado gráficos con un estilo intencionalmente cuadriculado y de baja resolución. Este tipo de arte es conocido por su estética <strong>retro</strong>, ya que recuerda los gráficos de las primeras consolas de videojuegos y ordenadores de las décadas de 1980 y 1990, donde las limitaciones tecnológicas obligaban a trabajar con pocos colores y una definición limitada. Sin embargo, lejos de ser una simple recreación nostálgica, el pixel art requiere <strong>precisión, creatividad y atención al detalle</strong>, ya que cada píxel cuenta para transmitir <strong>formas, emociones y movimientos</strong>.</p>
       <br>
-      <p>En diferentes partes del mundo, como en las cuevas de <strong>Altamira</strong> en España y <strong>Chauvet</strong> en Francia, podemos encontrar estas pinturas antiguas. Estas cuevas eran como los <strong>"museos"</strong> de la prehistoria. Los dibujos suelen mostrar escenas de la vida cotidiana de estas personas, como cazando animales grandes como bisontes y ciervos, bailando alrededor del fuego, y celebrando rituales importantes para ellos. También hacían pequeñas esculturas de piedra o hueso, representando <strong>figuras humanas y animales</strong>, que quizás usaban como amuletos o juguetes.</p>
+      <p>Además de su uso en videojuegos retro o indie, el pixel art se ha expandido a otros ámbitos, como <strong>animaciones, ilustraciones y memes</strong>, donde su estética minimalista sigue teniendo gran atractivo. A pesar de la sencillez aparente, el proceso de creación de pixel art puede ser muy complejo, ya que requiere una planificación cuidadosa para decidir la ubicación exacta de cada píxel y lograr efectos como <strong>sombreado, movimiento o volumen</strong>. Esto convierte a esta técnica en un desafío tanto artístico como técnico, donde el control del detalle es fundamental para lograr resultados impactantes.</p>
       <br>
-      <p>El arte prehistórico es muy importante porque nos ayuda a entender cómo vivían y pensaban las personas hace miles de años. Aunque no sabemos exactamente por qué hacían estos dibujos, creemos que podrían haber sido para contar historias, expresar sus creencias, o incluso <strong>enseñar</strong> a otros.</p>
     </div>
     <div class="image">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4WZCm3Ok5GfDGixoRraKa8yYdGl90uKMGig&s" alt="">
-      <p>Pinturas rupestres de National Geographic</p>
+      <img src="https://i.redd.it/hbokxp0dccc61.jpg" alt="">
+      <p>Ghostface Pixel Art de r/deadbydaylight</p>
     </div>
   </div>
   <div class="timeline-container">
-    <h1>Línea del tiempo del Arte prehistórico</h1>
+    <h1>Historia del Pixel Art</h1>
     <hr>
     <div class="timeline">
         <div class="timeline-event">
-            <div class="timeline-date">35,000 A.C.</div>
+            <div class="timeline-date">1970</div>
             <div class="timeline-content">
-                <h2>Aparición del arte mobiliar</h2>
-                <p>Primera evidencia del arte mobiliar, arte prehistórico transportable, incluyendo figuras de animales y humanos.</p>
+                <h2>Orígenes en la informática y videojuegos</h2>
+                <p>El pixel art comenzó a tomar forma con los primeros sistemas de visualización gráfica, como los monitores monocromáticos y las primeras consolas de videojuegos. Durante esta época, cada píxel representaba una unidad gráfica indivisible en las pantallas, y los desarrolladores tenían que dibujar personajes, objetos y escenarios directamente manipulando píxeles individuales. Juegos como Pong (1972), que utilizaba solo puntos blancos en una pantalla negra, sentaron las bases de lo que sería el arte pixelado, aunque de forma rudimentaria.</p>
             </div>
         </div>
         <div class="timeline-event">
-            <div class="timeline-date">40,000 A.C.</div>
+            <div class="timeline-date">1980 - 1990</div>
             <div class="timeline-content">
-                <h2>Comienzo del arte rupestre</h2>
-                <p>Aparecen las primeras pinturas y grabados en cuevas y abrigos rocosos.</p>
+                <h2>Consolas de 8 y 16 bits: la era dorada del pixel art</h2>
+                <p>Durante la era de las consolas de 8 y 16 bits (como el NES de Nintendo, el Sega Genesis y la Super Nintendo), el pixel art alcanzó su máximo esplendor. La tecnología de estos dispositivos aún era limitada, lo que obligaba a los diseñadores a trabajar con un número reducido de píxeles y colores, utilizando cada píxel de manera precisa para dar vida a personajes y mundos complejos. Juegos icónicos como Super Mario Bros. (1985) y The Legend of Zelda (1986) ejemplifican cómo se podían crear gráficos detallados y estilizados dentro de estas restricciones.</p>
             </div>
         </div>
         <div class="timeline-event">
-            <div class="timeline-date">10,000 A.C.</div>
+            <div class="timeline-date">Finales de los 90s</div>
             <div class="timeline-content">
-                <h2>Arte del Paleolítico Superior</h2>
-                <p>El arte del Paleolítico Superior se caracteriza por una gran variedad de formas de expresión artística.</p>
+                <h2>Declive con la llegada de los gráficos 3D</h2>
+                <p>Con la llegada de la tecnología 3D en los videojuegos, el pixel art empezó a perder popularidad. Consolas como la PlayStation y la Nintendo 64 permitieron trabajar con gráficos poligonales, lo que marcó el inicio de una nueva era en la industria. Muchos estudios comenzaron a abandonar los gráficos 2D tradicionales en favor de los entornos tridimensionales más realistas, y durante algunos años el pixel art fue relegado a proyectos pequeños o plataformas portátiles, como el Game Boy.</p>
             </div>
         </div>
         <div class="timeline-event">
-            <div class="timeline-date">4,000 A.C.</div>
+            <div class="timeline-date">2010 - Actualidad</div>
             <div class="timeline-content">
-                <h2>Inicio del Neolítico</h2>
-                <p>Comienza el Neolítico y con él, una nueva forma de vida y arte, incluyendo la cerámica y el trabajo con metales.</p>
+                <h2>Renacimiento del pixel art: juegos indie y nostalgia</h2>
+                <p>A partir de la década de 2010, el pixel art experimentó un renacimiento gracias al auge de los desarrolladores indie, quienes encontraron en este estilo una forma accesible de crear juegos atractivos sin necesidad de grandes recursos. Títulos como Minecraft (2011), Terraria (2011) y Stardew Valley (2016) demostraron que los gráficos pixelados podían ser atractivos para las audiencias modernas y que la nostalgia por los juegos clásicos seguía vigente.</p>
             </div>
         </div>
         <div class="timeline-event">
-            <div class="timeline-date">3,000 A.C.</div>
+            <div class="timeline-date">Actualidad</div>
             <div class="timeline-content">
-                <h2>Arte megalítico</h2>
-                <p>Comienza el arte megalítico, caracterizado por construcciones monumentales utilizando grandes piedras.</p>
-            </div>
-        </div>
-        <div class="timeline-event">
-            <div class="timeline-date">2,000 A.C.</div>
-            <div class="timeline-content">
-                <h2>Final del período prehistórico</h2>
-                <p>Fin del período prehistórico marcado por el inicio de la escritura en diferentes culturas.</p>
-            </div>
-        </div>
-        <div class="timeline-event">
-            <div class="timeline-date">1868</div>
-            <div class="timeline-content">
-                <h2>Descubrimiento de la cueva de Altamira</h2>
-                <p>La cueva de Altamira en España, hogar de arte rupestre prehistórico, es descubierta.</p>
+                <h2>Pixel art en la actualidad</h2>
+                <p>Hoy en día, el pixel art sigue siendo muy popular, especialmente en juegos independientes y proyectos artísticos en línea. Herramientas como Aseprite, Piskel y Pixilart permiten a los creadores trabajar cómodamente con píxeles, mientras que comunidades en línea mantienen viva la pasión por este estilo. Aunque la tecnología actual no impone las mismas restricciones que antes, el pixel art sigue fascinando por su capacidad de transmitir emociones y complejidad a través de diseños aparentemente simples.</p>
             </div>
         </div>
     </div>
     <br>
     <br>
     <div class="collage-container">
-        <h2>Algunos ejemplos de Arte Prehistórico</h2>
+        <h2>Algunos ejemplos de Pixel Art</h2>
         <div class="collage">
-            <img src="https://concepto.de/wp-content/uploads/2020/01/arte-prehistorico-altamira-ejemplos-e1580224616622.jpg" alt="">
-            <img src="https://concepto.de/wp-content/uploads/2020/01/arte-prehistorico-663x451.jpg" alt="">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS83Z8KQ_D0mFsrUZdGWC4fXvudofxxoBM7Rg&s" alt="">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZSFn6DyXqvGH88tgTDd2Mjb6X2xi05Vow8g&s" alt="">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7zxLpoUBTrZSKnuIPzcgkDlvFAlMwLQAHeg&s" alt="">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi1fJxUHLLpc4RG75OjvP8Zc-rKGhE40OXgQ&s" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxNNgNFwW80YEXpHmQj70L_ENOArNe_atAkQ&s" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSckrJG7DDvFchEkUh7RXNe-NKuWF8pC_PeVA&s" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6u9gfIB2BMvmDiC--64cDZRRGDNwG794hiA&s" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe3-XCG2YcHo96x5I26c0RGMrCWzvisFoBDg&s" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-vf28JeZGPOSLn1gHaeIrTxBVs6wjQiS1FQ&s" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTOKM9GCNL6Hl1NYbOtRULTK-3XviFdMB3bw&s" alt="">
         </div>
     </div>
     <div class="art-container">
-        <h2>Principales obras del Arte Prehistórico</h2>
-        <p>Las principales obras del arte prehistórico se dividen principalmente en tres categorías: <strong>pinturas rupestres, esculturas y arte mobiliar (arte portátil).</strong> Algunos ejemplos de cada categoria son:</p>
         <br>
         <div class="conlist">
-            <div class="title">Esculturas</div>
+            <div class="title">Características del pixel art:</div>
             <hr>
             <br>
-            <strong>1. Venus de Willendorf (Austria):</strong>
             <div class="list">
                 <ul>
-                    <li><strong>Descripción:</strong> Pequeña figura de una mujer, datada entre 28,000 y 25,000 a.C., hecha de piedra caliza y mide unos 11 cm de altura. Destaca por su cuerpo voluminoso con senos, abdomen y muslos prominentes.</li>
+                    <li>Las imágenes se construyen en dimensiones pequeñas (por ejemplo, 32x32 o 64x64 píxeles), lo que obliga a representar detalles con una economía de elementos.</li>
                     <br>
-                    <li><strong>Característica:</strong> La Venus de Willendorf está esculpida en piedra caliza y originalmente estaba cubierta con una capa de ocre rojo, podría haber tenido un significado ritual o simbólico relacionado con la fertilidad y la vida.</li>
+                    <li>Se utilizan pocos colores para mantener la coherencia visual, lo cual es un legado de las limitaciones técnicas de las primeras consolas.</li>
+					<br>
+					<li>Cada píxel es un "cuadrado" que forma parte del diseño, y la cuadrícula de estos píxeles suele ser evidente.</li>
                 </ul>
-                <div class="example">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSguwKrBjMwwQPr0nNruZwc2xM49IAQ1_JBWA&s" alt="">
-                </div>
             </div>
-            <strong>2. Hombre León (Alemania):</strong>
-            <div class="list">
-                <ul>
-                    <li><strong>Descripción:</strong> La escultura, conocida como el Hombre León o Löwenmensch, es una figura de 31,1 cm de altura tallada en marfil de mamut, datada en aproximadamente 40,000 a.C.</li>
-                    <br>
-                    <li><strong>Característica:</strong> Se cree que la figura tenía un significado espiritual o ritual, posiblemente relacionada con creencias antiguas.</li>
-                </ul>
-                <div class="example">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFhGmcYJ5c8jeWKTPaFlDx_O9qIYNdkRVnTQ&s" alt="">
-                </div>
-            </div> 
         </div>
         <div class="conlist">
-            <div class="title">Pinturas Rupestres</div>
+            <div class="title">Ejemplos comunes de pixel art</div>
             <hr>
             <br>
-            <strong>1. Cueva de Altamira (España):</strong>
             <div class="list">
                 <ul>
-                    <li><strong>Descripción:</strong> famosa por sus impresionantes pinturas rupestres, que representan animales como bisontes y ciervos con gran realismo y detalle, utilizando pigmentos naturales hace entre 36,000 y 13,000 años.</li>
-                    <br>
-                    <li><strong>Característica:</strong> Utilizaron pigmentos naturales, principalmente ocres rojos y negros, aplicados con técnicas como el soplado, el frotado y el pincelado.</li>
+                    <li><strong>Sprites:</strong> Imágenes pequeñas que representan personajes, objetos o elementos en juegos.</li>
+					<br>
+					<li><strong>Tilesets:</strong> Bloques gráficos reutilizables para diseñar fondos o escenarios.</li>
+					<br>
+					<li><strong>Escenarios y fondos:</strong> Paisajes construidos a partir de mosaicos.</li>
                 </ul>
-                <div class="example">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiNhnqAsq3zbAG7J7geQ2kaYdgDEtYAWlP8Q&s" alt="">
-                </div>
-            </div>
-            <strong>2. Cueva de Chauvet (Francia):</strong>
-            <div class="list">
-                <ul>
-                    <li><strong>Descripción:</strong> Contiene algunas de las pinturas rupestres más antiguas conocidas, con representaciones de animales como leones, rinocerontes y mamuts.</li>
-                    <br>
-                    <li><strong>Característica:</strong> La cueva contiene más de 400 representaciones de animales, incluyendo especies raramente representadas en otras cuevas de la misma época, como leones, rinocerontes y hienas.</li>
-                </ul>
-                <div class="example">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr-xgPa5qKi6CJOXikSgJWIwpXn8OYSXCRtg&s" alt="">
-                </div>
-            </div> 
+            </div>     
         </div>
         <div class="conlist">
-            <div class="title">Arte Mobiliar</div>
+            <div class="title">Herramientas populares para hacer pixel art</div>
             <hr>
             <br>
-            <strong>1. Bastón de Mando de La Madeleine (Francia):</strong>
             <div class="list">
                 <ul>
-                    <li><strong>Descripción:</strong> Es un objeto tallado en hueso de reno que data de alrededor de 12,000 a.C. Esta pieza exhibe grabados intricados de animales, incluyendo renos y caballos.</li>
+                    <li><strong>Aseprite:</strong> Una aplicación especializada para pixel art y animación.</li>
                     <br>
-                    <li><strong>Característica:</strong> se cree que estos bastones podrían haber tenido un propósito ceremonial o simbólico. Pueden haber sido usados por líderes tribales o chamanes en rituales.</li>
+                    <li><strong>Piskel:</strong> Editor en línea para crear sprites y animaciones.</li>
+                    <br>
+                    <li><strong>Pixilart:</strong> Plataforma con comunidad integrada para compartir obras.</li>
                 </ul>
-                <div class="example">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReocwjWYyAaY7Pj2LnEVbEZD2gW-ehYM4tGw&s" alt="">
-                </div>
             </div>
-            <strong>2. Piedras Grabadas de la Cueva de Gönnersdorf (Alemania):</strong>
-            <div class="list">
-                <ul>
-                    <li><strong>Descripción:</strong> Descubiertas en la década de 1960 en la región de Renania-Palatinado, Alemania, estas piedras datan aproximadamente de 15,000 a.C. Las figuras humanas tienen cuerpos alargados y carecen de detalles faciales.</li>
-                    <br>
-                    <li><strong>Característica:</strong> Presentan e incluyen escenas de caza y actividad diaria, lo que proporciona un valioso vistazo a la vida y cultura de las sociedades paleolíticas.</li>
-                </ul>
-                <div class="example">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSp_V0MIAGDvlTgAimAgxnOKlQMtyZQcznw98YrCwlpA&s" alt="">
-                </div>
-            </div> 
         </div>
     </div>
 </div>

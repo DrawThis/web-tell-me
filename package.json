@@ -38,6 +38,7 @@
 		"@iconify/svelte": "^4.0.2",
 		"@libsql/client": "^0.10.0",
 		"dotenv": "^16.4.5",
-		"drizzle-orm": "^0.33.0"
+		"drizzle-orm": "^0.33.0",
+		"turso": "^0.1.0"
 	}
 }

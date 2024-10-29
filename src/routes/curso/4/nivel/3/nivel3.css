@@ -50,7 +50,7 @@ body.nivel-3 #square-1 {
 }
 
 .modal-image {
-	width: 100%;
+	width: 50%;
 	height: auto;
 }
 
@@ -62,12 +62,10 @@ main {
 
 .container {
 	display: flex;
-	width: 100%;
-	height: 570px;
+	width: 1045px;
+	height: 577px;
 	gap: 10px;
 	padding: 10px;
-	max-width: 1050px;
-    z-index: 1000;
 }
 
 section {
@@ -146,7 +144,7 @@ section {
 }
 
 .colors .option:nth-child(2) {
-	background-color:  #8f6329;
+	background-color:  #fd6500;
 }
 
 .colors .option:nth-child(3) {
@@ -154,7 +152,7 @@ section {
 }
 
 .colors .option:nth-child(4) {
-	background-color: #c2a861;
+	background-color: #b65014;
 }
 
 .colors .option:nth-child(5) {
@@ -235,6 +233,7 @@ section {
 .objective img {
 	position: relative;
 	width: 240px;
+	margin-left: 66px;
 	margin-top: 10px;
 	border: 4px solid white;
 	border-radius: 5px;

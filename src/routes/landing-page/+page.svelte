@@ -248,7 +248,7 @@
 			<div class="faq-question">
 				<input id="q3" type="checkbox" class="panel" />
 				<div class="plus">+</div>
-				<label for="q3" class="panel-title">¿Se entregará algún certificado al finalizar el curso?</label>
+				<label for="q3" class="panel-title">¿Se entregará algún certificado al finalizar los cursos?</label>
 				<div class="panel-content">
 					Sí, al finalizar el curso, Draw This entregará un certificado, pero este será un reconocimiento simbólico otorgado por la plataforma. El objetivo del certificado es motivar a los usuarios y reconocer su esfuerzo y dedicación al completar todas las lecciones y actividades propuestas.
 				</div>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './nivel7.css';
-	import Nav from '$lib/navbar1/navbar.svelte';
+	import Nav from '$lib/navbar2/navbar.svelte';
 	import Next from '$lib/button.svelte';
 	import { onMount } from 'svelte';
 
@@ -19,12 +19,12 @@
 
 <div class="container">
 	<div class="header">
-		<h1>Vídeo: Historia del Arte Moderno</h1>
+		<h1>Vídeo: Lista de Materiales para dibujar</h1>
 	</div>
 	<div class="video-container">
 		<iframe
 			title=""
-			src="https://www.youtube.com/embed/WTDj0-jfMzU?si=6zl6CE5G-xOknFuW"
+			src="https://www.youtube.com/embed/f57aQB8epkk"
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 			allowfullscreen
@@ -35,7 +35,7 @@
 	<a href="https://www.example.com/video-link">Descargar el vídeo</a>
 </div>
 
-<a href="./8" data-sveltekit-reload data-sveltekit-preload-data="tap">
+<a href="/ingreso-cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">
 	<Next />
 </a>
 

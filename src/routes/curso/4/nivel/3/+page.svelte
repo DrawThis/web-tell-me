@@ -1,8 +1,8 @@
 <script lang="ts">
 	import './nivel3.css';
-	import Nav from '$lib/navbar1/navbar.svelte';
+	import Nav from '$lib/navbar4/navbar.svelte';
 	import Next from '$lib/button.svelte';
-	import { prehistorico, brush, circle, eraser, rectangle, triangle } from '$lib/IMAGES/todas';
+	import { brush, eraser } from '$lib/IMAGES/todas';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -12,91 +12,73 @@
 	let canvas: HTMLCanvasElement | null = null;
 	let ctx: CanvasRenderingContext2D | null = null;
 	let toolBtns: NodeListOf<HTMLElement>;
-	let fillColor: HTMLInputElement | null = null;
-	let sizeSlider: HTMLInputElement | null = null;
 	let colorBtns: NodeListOf<HTMLElement>;
 	let colorPicker: HTMLInputElement | null = null;
 	let clearCanvas: HTMLElement | null = null;
 	let saveImg: HTMLElement | null = null;
 
-	// Variables globales con valores predeterminados
-	let prevMouseX: number, prevMouseY: number, snapshot: ImageData;
+	// Variables globales
 	let isDrawing = false;
 	let selectedTool = 'brush';
-	let brushWidth = 5;
-	let selectedColor = '#8f6329';
+	let selectedColor = '#fd6500';
+	const pixelSize = 17.9; 
 
 	const setCanvasBackground = () => {
 		if (!ctx || !canvas) return;
-		ctx.fillStyle = '#c2a861';
+		ctx.fillStyle = '#ffffff';
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
-		ctx.fillStyle = selectedColor;
-	};
 
-	const drawRect = (e: MouseEvent) => {
-		if (!ctx || !canvas) return;
-		if (!fillColor?.checked) {
-			ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
-		} else {
-			ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
+		// Dibujar cuadrículas
+		ctx.strokeStyle = '#D3D3D3'; // Color de las líneas de la cuadrícula
+		const cols = Math.floor(canvas.width / pixelSize);
+		const rows = Math.floor(canvas.height / pixelSize);
+
+		for (let i = 0; i <= cols; i++) {
+			ctx.beginPath();
+			ctx.moveTo(i * pixelSize, 0);
+			ctx.lineTo(i * pixelSize, canvas.height);
+			ctx.stroke();
+		}
+
+		for (let j = 0; j <= rows; j++) {
+			ctx.beginPath();
+			ctx.moveTo(0, j * pixelSize);
+			ctx.lineTo(canvas.width, j * pixelSize);
+			ctx.stroke();
 		}
 	};
 
-	const drawCircle = (e: MouseEvent) => {
+	const drawPixel = (x: number, y: number) => {
 		if (!ctx) return;
-		ctx.beginPath();
-		const radius = Math.sqrt(
-			Math.pow(prevMouseX - e.offsetX, 2) + Math.pow(prevMouseY - e.offsetY, 2)
-		);
-		ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
-		fillColor?.checked ? ctx.fill() : ctx.stroke();
-	};
-
-	const drawTriangle = (e: MouseEvent) => {
-		if (!ctx) return;
-		ctx.beginPath();
-		ctx.moveTo(prevMouseX, prevMouseY);
-		ctx.lineTo(e.offsetX, e.offsetY);
-		ctx.lineTo(prevMouseX * 2 - e.offsetX, e.offsetY);
-		ctx.closePath();
-		fillColor?.checked ? ctx.fill() : ctx.stroke();
+		if (selectedTool === 'brush') {
+			ctx.fillStyle = selectedColor;
+			ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+		} else if (selectedTool === 'eraser') {
+			ctx.clearRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize); // Borra el pixel
+		}
 	};
 
 	const startDraw = (e: MouseEvent) => {
 		if (!ctx) return;
 		isDrawing = true;
-		prevMouseX = e.offsetX;
-		prevMouseY = e.offsetY;
-		ctx.beginPath();
-		ctx.lineWidth = brushWidth;
-		ctx.strokeStyle = selectedColor;
-		ctx.fillStyle = selectedColor;
-		snapshot = ctx.getImageData(0, 0, canvas!.width, canvas!.height);
+		const x = Math.floor(e.offsetX / pixelSize);
+		const y = Math.floor(e.offsetY / pixelSize);
+		console.log('Dibujando en:', x, y, 'con herramienta:', selectedTool);
+		drawPixel(x, y);
 	};
 
 	const drawing = (e: MouseEvent) => {
 		if (!isDrawing || !ctx) return;
-		ctx.putImageData(snapshot, 0, 0);
-
-		if (selectedTool === 'brush' || selectedTool === 'eraser') {
-			ctx.strokeStyle = selectedTool === 'eraser' ? '#fff' : selectedColor;
-			ctx.lineTo(e.offsetX, e.offsetY);
-			ctx.stroke();
-		} else if (selectedTool === 'rectangle') {
-			drawRect(e);
-		} else if (selectedTool === 'circle') {
-			drawCircle(e);
-		} else {
-			drawTriangle(e);
-		}
+		const x = Math.floor(e.offsetX / pixelSize);
+		const y = Math.floor(e.offsetY / pixelSize);
+		console.log('Dibujando en:', x, y, 'con herramienta:', selectedTool);
+		drawPixel(x, y);
 	};
 
 	onMount(() => {
 		canvas = document.querySelector('canvas');
 		ctx = canvas?.getContext('2d') || null;
 		toolBtns = document.querySelectorAll('.tool');
-		fillColor = document.querySelector('#fill-color') as HTMLInputElement;
-		sizeSlider = document.querySelector('#size-slider') as HTMLInputElement;
 		colorBtns = document.querySelectorAll('.colors .option');
 		colorPicker = document.querySelector('#color-picker') as HTMLInputElement;
 		clearCanvas = document.querySelector('.clear-canvas');
@@ -115,12 +97,6 @@
 				selectedTool = btn.id;
 			})
 		);
-
-		sizeSlider?.addEventListener('change', () => {
-			if (sizeSlider) {
-				brushWidth = parseInt(sizeSlider.value);
-			}
-		});
 
 		colorBtns.forEach((btn) =>
 			btn.addEventListener('click', () => {
@@ -210,47 +186,23 @@
 <div id="modal" class="modal">
 	<div class="modal-content">
 		<span class="close">&times;</span>
-		<img src={prehistorico} alt="" class="modal-image" />
-		<p><strong>Objetivo:</strong> Intenta recrear esta imagen.</p>
+		<img src="https://i.pinimg.com/736x/a0/1f/39/a01f399549a224fdab966b93971c7396.jpg" alt="" class="modal-image" />
+		<p><strong>Objetivo:</strong> Intenta plasmar este pixel art</p>
 	</div>
 </div>
 <main>
 	<div class="container">
 		<section class="tools-board">
 			<div class="row">
-				<label class="title" for="">Figuras</label>
-				<ul class="options">
-					<li class="option tool" id="rectangle">
-						<img src={ rectangle } alt="" />
-						<span>Rectángulo</span>
-					</li>
-					<li class="option tool" id="circle">
-						<img src={ circle } alt="" />
-						<span>Círculo</span>
-					</li>
-					<li class="option tool" id="triangle">
-						<img src={ triangle } alt="" />
-						<span>Triángulo</span>
-					</li>
-					<li class="option">
-						<input type="checkbox" id="fill-color" />
-						<label for="fill-color">Rellenar figura</label>
-					</li>
-				</ul>
-			</div>
-			<div class="row">
-				<label class="title" for="">Opciones</label>
+				<label class="title" for="">Herramientas</label>
 				<ul class="options">
 					<li class="option active tool" id="brush">
-						<img src={ brush } alt="" />
+						<img src={brush} alt="" />
 						<span>Pincel</span>
 					</li>
 					<li class="option tool" id="eraser">
-						<img src={ eraser } alt="" />
+						<img src={eraser} alt="" />
 						<span>Borrador</span>
-					</li>
-					<li class="option">
-						<input type="range" id="size-slider" min="1" max="30" value="10" />
 					</li>
 				</ul>
 			</div>
@@ -276,9 +228,8 @@
 		</section>
 	</div>
 	<div class="objective">
-		<img src={prehistorico} alt="" class="objective-image" />
-		<p><strong>Nota:</strong> Puedes ampliar la</p>
-		<p>imagen con solo apretarla.</p>
+		<img src="https://i.pinimg.com/736x/a0/1f/39/a01f399549a224fdab966b93971c7396.jpg"  alt="" class="objective-image" />
+		<p><strong>Nota:</strong> Puedes ampliar la imagen con solo apretarla.</p>
 	</div>
 </main>
 
