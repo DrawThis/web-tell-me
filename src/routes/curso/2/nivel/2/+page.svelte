@@ -98,7 +98,7 @@
           </div>     
       </div>
       <div class="conlist">
-          <div class="title">Algunos ejercicios de dibujo básico</div>
+          <div class="title">Algunos ejercicios de dibujo básico:</div>
           <hr>
           <br>
           <div class="list">
