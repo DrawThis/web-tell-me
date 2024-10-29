@@ -3,7 +3,7 @@
     import Nav from '$lib/navbar1/navbar.svelte';
     import Next from '$lib/button.svelte';
     import { onMount } from 'svelte';
-    import { img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10 } from '$lib/IMAGES/todas';
+    import { img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10 } from '$lib/IMAGES/historia/historia';
 
     onMount(() => {
         document.body.classList.add('nivel-5');
