@@ -57,6 +57,61 @@
             <img src="https://crehana-blog.imgix.net/media/filer_public/d4/6e/d46e9d45-bddf-40f5-98ad-51c0d19e0d9b/cactus.jpg?auto=format&q=50" alt="">
         </div>
     </div>
+    <div class="art-container">
+      <br>
+      <div class="conlist">
+          <div class="title">Características principales del dibujo básico:</div>
+          <hr>
+          <br>
+          <div class="list">
+              <ul>
+                  <li>Se trabaja con líneas rectas y curvas para definir formas y contornos.</li>
+                  <br>
+                  <li>Introducción al uso de sombras para dar volumen a las figuras.</li>
+                  <br>
+                  <li>Colocación de objetos en el espacio para crear un equilibrio visual.</li>
+                  <br>
+                  <li>Utilización de círculos, cuadrados y triángulos como base para construir formas más complejas.</li>
+                  <br>
+                  <li>Estudio de cómo los objetos cambian de tamaño y forma según la distancia.</li>
+                  <br>
+                  <li>Desarrollo de la coordinación ojo-mano para lograr precisión en los dibujos.</li>
+                  <br>
+                  <li>Medición y relación adecuada entre las diferentes partes de una figura.</li>
+              </ul>
+          </div>
+      </div>
+      <div class="conlist">
+          <div class="title">Herramientas comunes del dibujo básico:</div>
+          <hr>
+          <br>
+          <div class="list">
+              <ul>
+                  <li>Lápiz de grafito (HB, 2B)</li>
+                  <br>
+                  <li>Papel para bocetos</li>
+                  <br>
+                  <li>Borrador</li>
+                  <br>
+                  <li>Regla o compás (en casos de dibujo técnico o geométrico)</li>
+              </ul>
+          </div>     
+      </div>
+      <div class="conlist">
+          <div class="title">Algunos ejercicios de dibujo básico</div>
+          <hr>
+          <br>
+          <div class="list">
+              <ul>
+                  <li>Dibujar objetos cotidianos (una taza, una silla).</li>
+                  <br>
+                  <li>Reproducir figuras simples como círculos o cuadrados en diferentes tamaños.</li>
+                  <br>
+                  <li>Crear un retrato básico utilizando formas geométricas para estructurar el rostro.</li>
+              </ul>
+          </div>
+      </div>
+  </div>
 </div>
 
 <a href="./3" data-sveltekit-reload data-sveltekit-preload-data="tap">
