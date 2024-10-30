@@ -8,7 +8,7 @@
 	const elements = [
 		{
 			id: 'square-1',
-			text: '1. Desafío: Libera tu Creatividad',
+			text: '1. Desafío: Libera tu Creatividad - Puntillismo',
 			link: './1'
 		},
 	];
@@ -52,7 +52,7 @@
 	<div class="menu-container">
 		<nav>
 			<img src={logo4} alt="" class="logo" />
-			<div class="lesson">Curso: Libera tu Creatividad</div>
+			<div class="lesson">Material: Libera tu Creatividad</div>
 			<div class="nav-item" id="nav-item-1">
 				<div class="progress-bar" id="progress-bar">
 					<div class="square" id="square-1">

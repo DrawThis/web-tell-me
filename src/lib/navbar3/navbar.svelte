@@ -16,39 +16,34 @@
 		},
 		{
 			id: 'circle-1',
-			text: '2. Desarrollo: El Arte Prehistórico',
+			text: '2. Desarrollo: El Puntillismo',
 			link: './2'
 		},
 		{
 			id: 'square-1',
-			text: '3. Desafío: Realización de Arte Prehistórico',
+			text: '3. Desafío: Realización de Puntillismo',
 			link: './3'
 		},
 		{
 			id: 'rombo-2',
-			text: '4. Vídeo: Arte Prehistórico, Antiguo y Clásico',
+			text: '4. Vídeo: Cómo Sombrear con Puntillismo',
 			link: './4'
 		},
 		{
 			id: 'circle-2',
-			text: '5. Desarrollo: El Arte Antiguo y Medieval',
+			text: '5. Desarrollo: 5 Aspectos del Puntillismo',
 			link: './5'
 		},
 		{
 			id: 'square-2',
-			text: '6. Desafío: Construcción de Arte Antiguo',
+			text: '6. Desafío: Realización de Puntillismo II',
 			link: './6'
 		},
 		{
 			id: 'rombo-3',
-			text: '7. Vídeo: El Arte Moderno',
+			text: '7. Vídeo: Mandala con Puntillismo',
 			link: './7'
 		},
-		{
-			id: 'circle-3',
-			text: '8. Desarrollo: El Arte Contemporáneo',
-			link: './8'
-		}
 	];
 
 	onMount(() => {
@@ -86,6 +81,12 @@
 	});
 </script>
 
+<svelte:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Puntillismo</title>
+</svelte:head>
+
 <header>
 	<div class="menu-container">
 		<nav>
@@ -113,9 +114,6 @@
 					</div>
 					<div class="rombo" id="rombo-3">
 						<span class="numero">{position === 'rombo-3' ? levelNumber : ''}</span>
-					</div>
-					<div class="circle" id="circle-3">
-						<span class="numero">{position === 'circle-3' ? levelNumber : ''}</span>
 					</div>
 				</div>
 			</div>

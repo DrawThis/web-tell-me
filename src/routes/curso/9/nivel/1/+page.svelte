@@ -1,12 +1,12 @@
 <script lang="ts">
-	import './nivel6.css';
-	import Nav from '$lib/navbar3/navbar.svelte';
+	import './nivel1.css';
+	import Nav from '$lib/navbar9/navbar.svelte';
 	import Next from '$lib/button.svelte';
 	import { frutas, brush, eraser } from '$lib/IMAGES/todas';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		document.body.classList.add('nivel-6');
+		document.body.classList.add('nivel-1');
 	});
 
 	let canvas: HTMLCanvasElement | null = null;
@@ -21,7 +21,7 @@
 	let isDrawing = false;
 	let selectedTool = 'pencil';
 	let brushWidth = 5;
-	let selectedColor = '#92825e';
+	let selectedColor = '#000000';
 	let prevMouseX = 0;
 	let prevMouseY = 0;
 	let snapshot: ImageData;
@@ -133,50 +133,16 @@
 		canvas?.addEventListener('mousemove', drawing);
 		canvas?.addEventListener('mouseup', () => (isDrawing = false));
 	});
-
-	let modal: HTMLElement | null = null;
-	let span: HTMLElement | null = null;
-	let objectiveImage: HTMLElement | null = null;
-
-	onMount(() => {
-		modal = document.getElementById('modal');
-		span = document.getElementsByClassName('close')[0] as HTMLElement;
-		objectiveImage = document.querySelector('.objective-image');
-
-		if (modal) {
-			// Mostrar el modal al cargar la página
-			modal.style.display = 'block';
-		} else {
-			console.error('No se encontró el modal en el DOM');
-		}
-
-		if (span) {
-			// Cerrar el modal al hacer clic en la "X"
-			span.onclick = () => {
-				if (modal) {
-					modal.style.display = 'none';
-				}
-			};
-		}
-
-		// Cerrar el modal al hacer clic fuera de él
-		window.onclick = (event: MouseEvent) => {
-			if (event.target === modal && modal) {
-				modal.style.display = 'none';
-			}
-		};
-	});
 </script>
 
-<Nav levelNumber={6} position="square-2" />
+<svelte:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Libera tu Creatividad - Puntillismo</title>
+</svelte:head>
 
-<div id="modal" class="modal">
-	<div class="modal-content">
-		<span class="close">&times;</span>
-		<img src={frutas} alt="" class="modal-image" />
-		<p><strong>Objetivo:</strong> Intenta recrear esta imagen con puntos, sin ayuda de una guía</p>
-	</div>
-</div>
+<Nav />
+
 <main>
 	<div class="container">
 		<section class="tools-board">
@@ -217,15 +183,6 @@
 			<canvas></canvas>
 		</section>
 	</div>
-	<div class="objective">
-		<img src={frutas} alt="" class="objective-image" />
-		<p><strong>Nota:</strong> Puedes ampliar la</p>
-		<p>imagen con solo apretarla.</p>
-	</div>
 </main>
-
-<a href="./7" data-sveltekit-reload data-sveltekit-preload-data="tap">
-	<Next />
-</a>
 
 <div class="level-info" id="level-info"></div>

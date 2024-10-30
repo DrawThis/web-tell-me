@@ -22,6 +22,8 @@ import circle from './circle.svg';
 import eraser from './eraser.svg';
 import rectangle from './rectangle.svg';
 import triangle from './triangle.svg';
+import homero from './homero.jpg';
+import frutas from './cesto-de-frutas.jpg'
 
 export {
 	Uno,
@@ -47,5 +49,7 @@ export {
 	circle,
 	eraser,
 	rectangle,
-	triangle
+	triangle,
+	homero,
+	frutas
 };

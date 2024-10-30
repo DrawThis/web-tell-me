@@ -43,10 +43,7 @@
 	<title>Conoce y Descubre más de Draw This</title>
 	<link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
 	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" />
-	<link
-		rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-	/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </svelte:head>
 
 <div class="menu-container">
@@ -133,7 +130,7 @@
 		<div class="info-container">
 			<div class="info-box">
 				<Icon icon="uis:layer-group" class="info-logo" />
-				<p class="info-text">Más de 50 niveles disponibles para todos</p>
+				<p class="info-text">Más de 40 niveles disponibles para todos</p>
 			</div>
 			<div class="info-box">
 				<Icon icon="uis:clock-three" class="info-logo" />
@@ -184,7 +181,7 @@
 					<p>
 						La plataforma ofrece una biblioteca de lecciones en video que cubren una amplia gama de
 						técnicas y conceptos de dibujo. Están diseñadas para facilitar el aprendizaje de los
-						estudiantes de manera flexible y adaptada a sus necesidades.
+						usuarios de manera flexible y adaptada a sus necesidades.
 					</p>
 				</div>
 				<div class="image">
@@ -200,7 +197,7 @@
 					<p>
 						Actividades y proyectos diseñados para poner en práctica lo aprendido en las lecciones.
 						Estos ejercicios pueden incluir instrucciones detalladas y ejemplos para que los
-						estudiantes sigan y aprendan más a fondo.
+						usuarios sigan y aprendan más a fondo.
 					</p>
 				</div>
 				<div class="image">
@@ -212,10 +209,9 @@
 					<div class="circle-2">
 						<img src={number3} alt="" />
 					</div>
-					<h3>Materiales Didácticos Descargables:</h3>
+					<h3>Materiales Didácticos:</h3>
 					<p>
-						Guías paso a paso, hojas de trabajo, plantillas y referencias visuales que los
-						estudiantes pueden descargar e imprimir para complementar las lecciones en video.
+						Guías, videos, tutoriales y referencias visuales que los usuarios usen complementar las lecciones. Estos materiales son totalmente gratuitos y accesibles para todos.
 					</p>
 				</div>
 				<div class="image">
