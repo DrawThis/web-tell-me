@@ -26,7 +26,7 @@
 	</div>
 </div>
 <div class="video-link">
-	<a href="https://www.example.com/video-link">Descargar el vídeo</a>
+	<a href="https://www.youtube.com/watch/WTDj0-jfMzU?si=6zl6CE5G-xOknFuW">Ver en Youtube</a>
 </div>
 
 <a href="./8" data-sveltekit-reload data-sveltekit-preload-data="tap">

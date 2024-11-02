@@ -9,12 +9,6 @@
 	});
 </script>
 
-<svelte:head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Historia del Arte</title>
-</svelte:head>
-
 <Nav levelNumber={7} position="rombo-3" />
 
 <div class="container">
@@ -32,7 +26,7 @@
 	</div>
 </div>
 <div class="video-link">
-	<a href="https://www.example.com/video-link">Descargar el vídeo</a>
+	<a href="https://www.youtube.com/watch/f57aQB8epkk">Ver en Youtube</a>
 </div>
 
 <a href="/ingreso-cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">
