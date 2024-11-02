@@ -1,9 +1,9 @@
 <script lang="ts">
     import './nivel5.css';
-    import Nav from '$lib/navbar1/navbar.svelte';
+    import Nav from '$lib/navbar6/navbar.svelte';
     import Next from '$lib/button.svelte';
     import { onMount } from 'svelte';
-    import { img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10 } from '$lib/IMAGES/historia/historia';
+    import { img0, img1, img2, img3, img4, img5, img6, img7 } from '$lib/IMAGES/anatomia/anatomia';
 
     onMount(() => {
         document.body.classList.add('nivel-5');
@@ -32,12 +32,6 @@
     }
 </script>
 
-<svelte:head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Historia del Arte</title>
-</svelte:head>
-
 <Nav levelNumber={5} position="circle-2" />
 
 <div class="container">
@@ -45,79 +39,59 @@
         <div bind:this={slides[0]} class="slide">
             <img src={img0} class="slide-img" alt="" />
             <div class="text-overlay">
-                El arte ha sido <strong>una expresión clave de la humanidad a lo largo de los siglos.</strong> En este recorrido, exploraremos dos épocas fundamentales: el <strong>arte medieval</strong>,<br /> centrado en la <strong>espiritualidad</strong> y la <strong>arquitectura religiosa</strong>, y el <strong>arte antiguo</strong>, marcado por la <strong>búsqueda de la perfección</strong> y el <strong>equilibrio</strong>. Acompáñanos <br /> en este viaje visual por algunas de las obras y estilos más influyentes de estas épocas que moldearon la historia del arte.
+                <p>El estudio de la <strong>anatomía en el arte</strong> es una herramienta esencial para cualquier artista que desee representar la figura humana con autenticidad y precisión. No se trata solo de trazar líneas, sino de comprender la <strong>estructura interna</strong> que da vida a cada forma. Al explorar los componentes básicos del cuerpo humano, como las proporciones, la masa muscular y la dinámica de movimiento, podemos enriquecer nuestra <strong>percepción artística</strong>. Por ello, descubriremos <strong>aspectos clave</strong> que mejorarán nuestras habilidades de dibujo.</p>
             </div>
         </div>
+        
 
         <div bind:this={slides[1]} class="slide">
             <img src={img1} class="slide-img" alt="" />
             <div class="text-overlay">
-                <strong>Catedral de Notre-Dame de París (Francia, siglo XII-XIV):</strong> La Catedral de Notre-Dame es uno de los máximos exponentes de la arquitectura gótica. Situada en el corazón de París, fue construida entre los siglos XII y XIV, siendo conocida por su impresionante fachada occidental, sus altas torres gemelas y el uso <br /> innovador de los arbotantes, que permitieron elevar la estructura y llenar los interiores con luz a través de sus enormes vitrales.
+                <p><strong>1. Proporciones del cuerpo humano:</strong> Las proporciones entre las diferentes partes del cuerpo son fundamentales para lograr una figura armoniosa y creíble. Por ejemplo, la cabeza es generalmente una fracción del tamaño del torso, y el largo de los brazos debe coincidir con la longitud del torso en estado de reposo. Estudiar estas proporciones te ayudará a evitar distorsiones, logrando figuras que se perciban anatómicamente correctas y visualmente equilibradas.</p>
             </div>
         </div>
-
+        
         <div bind:this={slides[2]} class="slide">
             <img src={img2} class="slide-img" alt="" />
             <div class="text-overlay">
-                <strong>El Tapiz de Bayeux (Francia, siglo XI):</strong> Esta obra es una pieza monumental del bordado medieval, de casi 70 metros de largo, que narra los eventos que <br /> llevaron a la conquista normanda de Inglaterra en 1066. Realizado en lino bordado con lana de colores, el tapiz muestra más de 70 escenas con <br /> detalles minuciosos de la Batalla de Hastings y otros acontecimientos clave.
+                <p><strong>2. Estructura ósea como base:</strong> La estructura ósea es el esqueleto que da soporte al cuerpo y determina tanto la postura como los movimientos posibles. Conocer la posición y función de los huesos principales, como la columna, la pelvis y las extremidades, te permite construir figuras con mayor realismo y estabilidad. Esta base también te ayuda a comprender cómo se articulan y sostienen los músculos en torno al esqueleto, logrando poses más naturales y dinámicas.</p>
             </div>
         </div>
-
+        
         <div bind:this={slides[3]} class="slide">
             <img src={img3} class="slide-img" alt="" />
             <div class="text-overlay">
-                <strong>La Portada de la Basílica de San Marcos (Venecia, Italia, siglo XI):</strong> La Basílica de San Marcos es un ejemplo sobresaliente de arte y arquitectura bizantina en el mundo occidental. Su impresionante fachada está decorada con mosaicos dorados que brillan a la luz del sol, mientras que el interior está <br /> ricamente decorado con imágenes sacras que narran historias del Antiguo y Nuevo Testamento.
+                <p><strong>3. Masa y forma muscular:</strong> Los músculos proporcionan volumen y permiten que el cuerpo realice movimientos complejos. Comprender la disposición y función de los grupos musculares principales, como el deltoides, los bíceps y los músculos de las piernas, te permitirá añadir profundidad y realismo. Al estudiar cómo se contraen y expanden los músculos según la postura, podrás crear figuras anatómicas que transmitan energía, peso y tensión.</p>
             </div>
         </div>
-
+        
         <div bind:this={slides[4]} class="slide">
             <img src={img4} class="slide-img" alt="" />
             <div class="text-overlay">
-                <strong>Las miniaturas de los Evangelios de Lindisfarne (Inglaterra, siglo VIII):</strong> Este manuscrito iluminado es uno de los mejores ejemplos del arte insular celta, <br /> que floreció en las islas británicas tras la retirada del Imperio Romano. El libro, producido por monjes en la isla de Lindisfarne, combina elementos <br /> cristianos y paganos en su decoración, con complejos entrelazados, figuras geométricas y símbolos de animales que acompañan los textos sagrados.
+                <p><strong>4. Detalle en zonas específicas:</strong> Algunos detalles específicos como pliegues, prominencias óseas y arrugas pueden dar a tu dibujo un toque de realismo adicional. Áreas como las manos, pies, rostro y cuello tienen características distintivas que requieren una observación más detallada. Añadir estos detalles puede transformar un dibujo básico en uno detallado y realista, revelando la estructura subyacente de huesos y músculos y mostrando el carácter y la individualidad del sujeto.</p>
             </div>
         </div>
-
+        
         <div bind:this={slides[5]} class="slide">
             <img src={img5} class="slide-img" alt="" />
             <div class="text-overlay">
-                <strong>El Pórtico de la Gloria en la Catedral de Santiago de Compostela (España, siglo XII):</strong> Esta obra escultórica, situada en la entrada occidental de la catedral, <br /> es una de las más representativas del arte románico. El Pórtico de la Gloria fue creado por el maestro Mateo y representa el Juicio Final, con figuras <br /> de Cristo, los Apóstoles y los Profetas. La escultura muestra el estilo románico en su plenitud, con figuras estáticas pero llenas de simbolismo.
+                <p><strong>5. Referencias confiables:</strong> Usar fuentes visuales como libros de anatomía, modelos y fotos te permite captar la complejidad de las estructuras anatómicas con precisión. Estas referencias son cruciales para obtener proporciones correctas y entender cómo el cuerpo se adapta a diferentes posiciones y gestos. Trabajar con referencias te ayudará a perfeccionar tu técnica y a ganar confianza en tus representaciones anatómicas, además de hacer que tus figuras sean más creíbles y detalladas.</p>
             </div>
         </div>
-
+        
         <div bind:this={slides[6]} class="slide">
             <img src={img6} class="slide-img" alt="" />
             <div class="text-overlay">
-                <strong>La Gran Pirámide de Giza (Egipto, siglo XXVI a.C.):</strong> La Gran Pirámide de Giza es el monumento más famoso de las pirámides de Egipto y una de las Siete Maravillas del Mundo Antiguo. Construida como tumba para el faraón Keops, la pirámide fue construida hace más de 4.500 años y sigue <br /> siendo la estructura de piedra más grande del mundo.
+                <p><strong>6. Perspectiva y volumen:</strong> La capacidad de representar el cuerpo humano desde diferentes ángulos mejora la tridimensionalidad en tus dibujos. La perspectiva permite captar cómo las partes del cuerpo se ven más grandes o pequeñas según su cercanía al observador. Practicar con formas simples en perspectiva y luego aplicarlas al cuerpo humano ayuda a desarrollar una percepción espacial sólida, lo cual es esencial para crear figuras con volumen y profundidad.</p>
             </div>
         </div>
-
+        
         <div bind:this={slides[7]} class="slide">
             <img src={img7} class="slide-img" alt="" />
             <div class="text-overlay">
-                <strong>El Partenón (Atenas, Grecia, siglo V a.C.):</strong> El Partenón es un templo dedicado a la diosa Atenea, situado en la Acrópolis de Atenas. Fue construido en el <br /> siglo V a.C. durante el apogeo de la civilización griega y representa la cima de la arquitectura dórica. Aunque muchas de sus esculturas han sido <br /> removidas o dañadas, el edificio en sí es un símbolo de la búsqueda griega por la perfección en las proporciones arquitectónicas.
+                <p><strong>7. Uso de sombras y luces:</strong> La correcta aplicación de sombras y luces añade tridimensionalidad al dibujo anatómico. Las sombras permiten definir el relieve de los músculos y las curvas del cuerpo, mientras que la luz resalta las partes que están en posición más elevada. Entender cómo las sombras y luces interactúan con las superficies anatómicas también ayuda a crear una sensación de peso y volumen, logrando figuras más expresivas y realistas.</p>
             </div>
-        </div>
-
-        <div bind:this={slides[8]} class="slide">
-            <img src={img8} class="slide-img" alt="" />
-            <div class="text-overlay">
-                <strong>El Discóbolo (Grecia, siglo V a.C.):</strong> Esta famosa escultura, creada por el artista Mirón, representa a un atleta en el acto de lanzar un disco. El Discóbolo <br /> es un ejemplo perfecto de la búsqueda de los griegos por capturar el movimiento y la proporción ideal en el cuerpo humano. A través de la tensión <br /> muscular y la postura dinámica, Mirón logró captar no solo la acción del momento, sino también la armonía y el equilibrio que eran fundamentales.
-            </div>
-        </div>
-
-        <div bind:this={slides[9]} class="slide">
-            <img src={img9} class="slide-img" alt="" />
-            <div class="text-overlay">
-                <strong>La Venus de Milo (Grecia, siglo II a.C.):</strong> Descubierta en la isla de Milo, esta estatua de Afrodita es un ejemplo icónico de la escultura helenística. <br /> Aunque le faltan los brazos, la estatua es famosa por su belleza idealizada, con un torso perfectamente modelado y una expresión serena. La obra <br /> es un símbolo de la habilidad griega para combinar la perfección anatómica con una emoción contenida.
-            </div>
-        </div>
-
-        <div bind:this={slides[10]} class="slide">
-            <img src={img10} class="slide-img" alt="" />
-            <div class="text-overlay">
-                <strong>El Altar de Pérgamo (Berlín, siglo II a.C.):</strong> Este monumental altar, que fue descubierto en Pérgamo (actual Turquía), es famoso por su friso que narra <br /> las guerras de los dioses contra los gigantes. La obra es una muestra de la maestría helenística en el arte de relieves, <br /> donde se combinan la narrativa épica con un profundo sentido de la emoción.
-            </div>
-        </div>
+        </div> 
     </div>
     <button class="buttons" id="prevBtn" on:click={() => plusSlides(-1)}>&lt;</button>
 	<button class="buttons" id="nextBtn" on:click={() => plusSlides(1)}>&gt;</button>

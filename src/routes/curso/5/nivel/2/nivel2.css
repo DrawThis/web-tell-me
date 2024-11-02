@@ -34,9 +34,10 @@ body.nivel-2 #circle-1 {
 
 .image img {
 	width: 75%;
-	height: 90%;
+	height: 85%;
 	border: 2px solid black;
 	border-radius: 10px;
+	object-fit: cover;
 }
 
 .timeline-container {
@@ -52,42 +53,41 @@ body.nivel-2 #circle-1 {
 	margin-bottom: 20px;
 }
 
-.timeline {
+.info-container {
 	display: flex;
-	justify-content: space-between;
-	overflow-x: auto;
-	padding: 10px 0;
-}
-
-.timeline-event {
-	flex: 0 0 300px;
-	position: relative;
-	margin: 0 10px;
-	padding: 10px;
-	background: #fff;
-	border: 2px solid rgba(0, 0, 0, 0.534);
-	border-radius: 8px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.timeline-date {
-	font-size: 14px;
-	font-weight: bold;
-	margin-bottom: 10px;
-	color: #333;
-}
-
-.timeline-content h2 {
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px;
+  }
+  
+  .info-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 25%;
+	padding: 20px;
+	background-color: #f4f4f4;
+	border: 1px solid black;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+  }
+  
+  .info-box:hover {
+	transform: translateY(-10px);
+  }
+  
+  .info-logo {
+	width: 80px;
+	height: 80px;
+	margin-bottom: 15px;
+  }
+  
+  .info-text {
 	font-size: 16px;
-	margin: 0 0 10px;
-	color: #007bff;
-}
-
-.timeline-content p {
-	font-size: 14px;
-	margin: 0;
-	color: #666;
-}
+	text-align: center;
+	color: #333;
+  }
 
 .collage-container {
 	max-width: 1200px;

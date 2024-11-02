@@ -95,11 +95,11 @@ section {
 }
 
 .colors .option:nth-child(2) {
-	background-color:  #ff9a02;
+	background-color:  #000000;
 }
 
 .colors .option:nth-child(3) {
-	background-color: #000000;
+	background-color: #ff0000;
 }
 
 .colors .option:nth-child(4) {

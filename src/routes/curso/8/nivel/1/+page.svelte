@@ -19,7 +19,7 @@
 	// Variables globales
 	let isDrawing = false;
 	let selectedTool = 'brush';
-	let selectedColor = '#d89839';
+	let selectedColor = '#000000';
 	const pixelSize = 20.9; 
 
 	const setCanvasBackground = () => {

@@ -43,6 +43,9 @@
 <div class="container" class:right-panel-active={rightPanelActive}>
 	<div class="form-container login-container">
 		<img src={logo} alt="" />
+
+		<!--FORMULARIO DE INICIO DE SESIÓN-->
+
 		<form method="post">
 			<h1>Inicia Sesión</h1>
 			<div class="input-box">
@@ -60,7 +63,7 @@
 					placeholder="Password123"
 					required
 					minlength="4"
-					maxlength="25"
+					maxlength="18"
 					id="passwordInput1"
 				/>
 				<button
@@ -95,6 +98,9 @@
 
 	<div class="form-container register-container">
 		<img src={logo} alt="" />
+
+		<!--FORMULARIO DE REGISTRO-->
+
 		<form method="post">
 			<h1>Registrate</h1>
 			<div class="input-box">
@@ -132,7 +138,7 @@
 					placeholder="Password123"
 					required
 					minlength="4"
-					maxlength="25"
+					maxlength="18"
 					id="registerPasswordInput"
 				/>
 				<button

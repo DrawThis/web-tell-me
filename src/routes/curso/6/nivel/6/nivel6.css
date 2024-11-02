@@ -50,7 +50,7 @@ body.nivel-6 #square-2 {
 }
 
 .modal-image {
-	width: 100%;
+	width: 50%;
 	height: auto;
 }
 
@@ -67,7 +67,6 @@ main {
 	gap: 10px;
 	padding: 10px;
 	max-width: 1050px;
-    z-index: 1000;
 }
 
 section {

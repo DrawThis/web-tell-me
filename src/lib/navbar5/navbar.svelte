@@ -11,44 +11,39 @@
 	const elements = [
 		{
 			id: 'rombo-1',
-			text: '1. Video: Introducción a la Historia del Arte',
+			text: '1. Video: Introducción a la Perspectiva',
 			link: './1'
 		},
 		{
 			id: 'circle-1',
-			text: '2. Desarrollo: El Arte Prehistórico',
+			text: '2. Desarrollo: La Perspectiva',
 			link: './2'
 		},
 		{
 			id: 'square-1',
-			text: '3. Desafío: Realización de Arte Prehistórico',
+			text: '3. Desafío: Realización de Perspectiva',
 			link: './3'
 		},
 		{
 			id: 'rombo-2',
-			text: '4. Vídeo: Arte Prehistórico, Antiguo y Clásico',
+			text: '4. Vídeo: Tipos de Perspectivas',
 			link: './4'
 		},
 		{
 			id: 'circle-2',
-			text: '5. Desarrollo: El Arte Antiguo y Medieval',
+			text: '5. Desarrollo: Claves para la Perspectiva',
 			link: './5'
 		},
 		{
 			id: 'square-2',
-			text: '6. Desafío: Construcción de Arte Antiguo',
+			text: '6. Desafío: Realización de Perspectiva II',
 			link: './6'
 		},
 		{
 			id: 'rombo-3',
-			text: '7. Vídeo: El Arte Moderno',
+			text: '7. Vídeo: 4 Trucos de Perspectiva',
 			link: './7'
 		},
-		{
-			id: 'circle-3',
-			text: '8. Desarrollo: El Arte Contemporáneo',
-			link: './8'
-		}
 	];
 
 	onMount(() => {
@@ -86,11 +81,17 @@
 	});
 </script>
 
+<svelte:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Perspectiva</title>
+</svelte:head>
+
 <header>
 	<div class="menu-container">
 		<nav>
 			<img src={logo4} alt="" class="logo" />
-			<div class="lesson">Curso: Historia del Arte</div>
+			<div class="lesson">Curso: Perspectiva</div>
 			<div class="nav-item" id="nav-item-1">
 				<div class="progress-bar" id="progress-bar">
 					<div class="rombo" id="rombo-1">
@@ -113,9 +114,6 @@
 					</div>
 					<div class="rombo" id="rombo-3">
 						<span class="numero">{position === 'rombo-3' ? levelNumber : ''}</span>
-					</div>
-					<div class="circle" id="circle-3">
-						<span class="numero">{position === 'circle-3' ? levelNumber : ''}</span>
 					</div>
 				</div>
 			</div>

@@ -1,8 +1,7 @@
 <script lang="ts">
-	import './nivel3.css';
-	import Nav from '$lib/navbar6/navbar.svelte';
-	import Next from '$lib/button.svelte';
-	import { brush, eraser } from '$lib/IMAGES/todas';
+	import './nivel1.css';
+	import Nav from '$lib/navbar10/navbar.svelte';
+	import { line, eraser, } from '$lib/IMAGES/todas';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -12,6 +11,7 @@
 	let canvas: HTMLCanvasElement | null = null;
 	let ctx: CanvasRenderingContext2D | null = null;
 	let toolBtns: NodeListOf<HTMLElement>;
+	let fillColor: HTMLInputElement | null = null;
 	let sizeSlider: HTMLInputElement | null = null;
 	let colorBtns: NodeListOf<HTMLElement>;
 	let colorPicker: HTMLInputElement | null = null;
@@ -33,32 +33,49 @@
 	};
 
 	const startDraw = (e: MouseEvent) => {
-		if (!ctx) return;
-		isDrawing = true;
-		prevMouseX = e.offsetX;
-		prevMouseY = e.offsetY;
+	if (!ctx) return;
+	isDrawing = true;
+	prevMouseX = e.offsetX;
+	prevMouseY = e.offsetY;
+	ctx.beginPath();
+	ctx.lineWidth = brushWidth;
+	ctx.strokeStyle = selectedColor;
+	ctx.fillStyle = selectedColor;
+	snapshot = ctx.getImageData(0, 0, canvas!.width, canvas!.height);
+};
+
+const drawing = (e: MouseEvent) => {
+	if (!isDrawing || !ctx) return;
+	ctx.putImageData(snapshot, 0, 0);
+
+	// Dibuja una línea recta desde el punto inicial hasta el punto actual
+	if (selectedTool === 'brush' || selectedTool === 'eraser') {
+		ctx.strokeStyle = selectedTool === 'eraser' ? '#fff' : selectedColor;
 		ctx.beginPath();
-		ctx.lineWidth = brushWidth;
-		ctx.strokeStyle = selectedColor;
-		ctx.fillStyle = selectedColor;
-		snapshot = ctx.getImageData(0, 0, canvas!.width, canvas!.height);
-	};
+		ctx.moveTo(prevMouseX, prevMouseY); // Punto inicial
+		ctx.lineTo(e.offsetX, e.offsetY);   // Punto actual (fin de la línea)
+		ctx.stroke();
+	}
+};
 
-	const drawing = (e: MouseEvent) => {
-		if (!isDrawing || !ctx) return;
-		ctx.putImageData(snapshot, 0, 0);
+const endDraw = () => {
+	isDrawing = false;
+};
 
-		if (selectedTool === 'brush' || selectedTool === 'eraser') {
-			ctx.strokeStyle = selectedTool === 'eraser' ? '#c2a861' : selectedColor;
-			ctx.lineTo(e.offsetX, e.offsetY);
-			ctx.stroke();
-		}
-	};
+// Actualiza los eventos para incluir endDraw cuando sueltes el mouse
+onMount(() => {
+	canvas?.addEventListener('mousedown', startDraw);
+	canvas?.addEventListener('mousemove', drawing);
+	canvas?.addEventListener('mouseup', endDraw);
+	canvas?.addEventListener('mouseleave', endDraw);
+});
+
 
 	onMount(() => {
 		canvas = document.querySelector('canvas');
 		ctx = canvas?.getContext('2d') || null;
 		toolBtns = document.querySelectorAll('.tool');
+		fillColor = document.querySelector('#fill-color') as HTMLInputElement;
 		sizeSlider = document.querySelector('#size-slider') as HTMLInputElement;
 		colorBtns = document.querySelectorAll('.colors .option');
 		colorPicker = document.querySelector('#color-picker') as HTMLInputElement;
@@ -162,15 +179,14 @@
 	});
 </script>
 
-<Nav levelNumber={3} position="square-1" />
+<svelte:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Libera tu Creatividad - Lineas</title>
+</svelte:head>
 
-<div id="modal" class="modal">
-	<div class="modal-content">
-		<span class="close">&times;</span>
-		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSehvLBGn513nlt02lHq4EuxMsiUGeo3CgoGw&s" alt="" class="modal-image" />
-		<p><strong>Objetivo:</strong> Intenta recrear todos los pasos de esta imagen.</p>
-	</div>
-</div>
+<Nav />
+
 <main>
 	<div class="container">
 		<section class="tools-board">
@@ -178,8 +194,8 @@
 				<label class="title" for="">Opciones</label>
 				<ul class="options">
 					<li class="option active tool" id="brush">
-						<img src={ brush } alt="" />
-						<span>Pincel</span>
+						<img src={ line } alt="" />
+						<span>Linea</span>
 					</li>
 					<li class="option tool" id="eraser">
 						<img src={ eraser } alt="" />
@@ -211,15 +227,6 @@
 			<canvas></canvas>
 		</section>
 	</div>
-	<div class="objective">
-		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSehvLBGn513nlt02lHq4EuxMsiUGeo3CgoGw&s" alt="" class="objective-image" />
-		<p><strong>Nota:</strong> Puedes ampliar la</p>
-		<p>imagen con solo apretarla.</p>
-	</div>
 </main>
 
-<a href="./4" data-sveltekit-reload data-sveltekit-preload-data="tap">
-	<Next />
-</a>
 
-<div class="level-info" id="level-info"></div>

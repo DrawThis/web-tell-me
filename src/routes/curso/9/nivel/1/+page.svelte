@@ -1,8 +1,7 @@
 <script lang="ts">
 	import './nivel1.css';
 	import Nav from '$lib/navbar9/navbar.svelte';
-	import Next from '$lib/button.svelte';
-	import { frutas, brush, eraser } from '$lib/IMAGES/todas';
+	import { brush, eraser } from '$lib/IMAGES/todas';
 	import { onMount } from 'svelte';
 
 	onMount(() => {

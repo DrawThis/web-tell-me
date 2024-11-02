@@ -41,7 +41,7 @@
 		</div>
 		<div class="info-box">
 			<Icon icon="fluent-mdl2:color-solid" class="info-logo" />
-			<p class="info-text"><strong>Luminosidad cromática:</strong> La técnica busca lograr mayor brillo mediante contrastes de colores colocados lado a lado, en lugar de oscurecerlos con pigmentos.</p>
+			<p class="info-text"><strong>Luminosidad:</strong> La técnica busca lograr mayor brillo mediante contrastes de colores colocados lado a lado, en lugar de oscurecerlos con pigmentos.</p>
 		</div>
 	</div>
     <br>

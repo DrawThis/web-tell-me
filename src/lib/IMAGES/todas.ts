@@ -18,12 +18,15 @@ import prehistorico from './Arte Prehistórico.jfif';
 import auto from './auto.jpg';
 import venus from './Venus-Milo.png';
 import brush from './brush.svg';
+import line from './line.svg';
 import circle from './circle.svg';
 import eraser from './eraser.svg';
 import rectangle from './rectangle.svg';
 import triangle from './triangle.svg';
 import homero from './homero.jpg';
 import frutas from './cesto-de-frutas.jpg'
+import habitacion from './habitacion.jpg'
+import torso from './torso.jpg'
 
 export {
 	Uno,
@@ -46,10 +49,13 @@ export {
 	auto,
 	venus,
 	brush,
+	line,
 	circle,
 	eraser,
 	rectangle,
 	triangle,
 	homero,
-	frutas
+	frutas,
+	habitacion,
+	torso
 };

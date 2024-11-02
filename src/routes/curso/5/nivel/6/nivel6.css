@@ -50,7 +50,7 @@ body.nivel-6 #square-2 {
 }
 
 .modal-image {
-	width: 100%;
+	width: 80%;
 	height: auto;
 }
 
@@ -150,11 +150,11 @@ section {
 }
 
 .colors .option:nth-child(3) {
-	background-color: #f3250a;
+	background-color: #3b3b3b;
 }
 
 .colors .option:nth-child(4) {
-	background-color: #07f041;
+	background-color: #a8a8a8;
 }
 
 .colors .option:nth-child(5) {

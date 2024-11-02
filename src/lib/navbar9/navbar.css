@@ -129,6 +129,7 @@ header {
 	right: 420px;
 	width: 340px;
 	height: 30px;
+	pointer-events: none;
 	background-color: black;
 	color: white;
 	display: flex;

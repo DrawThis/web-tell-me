@@ -173,7 +173,7 @@
 		<span class="close">&times;</span>
 		<img src={venus} alt="" class="modal-image" />
 		<p>
-			<strong>Objetivo:</strong> Está imagen estará incompleta, intenta completarla a tu gusto (puedes
+			<strong>Objetivo:</strong> Está imagen está incompleta, intenta completarla a tu gusto (puedes
 			hacerla de la forma que quieras).
 		</p>
 	</div>

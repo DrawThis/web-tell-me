@@ -1,8 +1,8 @@
 <script lang="ts">
 	import './nivel3.css';
-	import Nav from '$lib/navbar1/navbar.svelte';
+	import Nav from '$lib/navbar5/navbar.svelte';
 	import Next from '$lib/button.svelte';
-	import { prehistorico, brush, circle, eraser, rectangle, triangle } from '$lib/IMAGES/todas';
+	import { habitacion, line, eraser, } from '$lib/IMAGES/todas';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -23,73 +23,64 @@
 	let prevMouseX: number, prevMouseY: number, snapshot: ImageData;
 	let isDrawing = false;
 	let selectedTool = 'brush';
-	let brushWidth = 5;
-	let selectedColor = '#8f6329';
+	let brushWidth = 3;
+	let selectedColor = '#000000';
 
 	const setCanvasBackground = () => {
 		if (!ctx || !canvas) return;
-		ctx.fillStyle = '#c2a861';
-		ctx.fillRect(0, 0, canvas.width, canvas.height);
-		ctx.fillStyle = selectedColor;
-	};
 
-	const drawRect = (e: MouseEvent) => {
-		if (!ctx || !canvas) return;
-		if (!fillColor?.checked) {
-			ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
-		} else {
-			ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
-		}
-	};
+		const backgroundImage = new Image();
+		backgroundImage.src = habitacion;
 
-	const drawCircle = (e: MouseEvent) => {
-		if (!ctx) return;
-		ctx.beginPath();
-		const radius = Math.sqrt(
-			Math.pow(prevMouseX - e.offsetX, 2) + Math.pow(prevMouseY - e.offsetY, 2)
-		);
-		ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
-		fillColor?.checked ? ctx.fill() : ctx.stroke();
-	};
-
-	const drawTriangle = (e: MouseEvent) => {
-		if (!ctx) return;
-		ctx.beginPath();
-		ctx.moveTo(prevMouseX, prevMouseY);
-		ctx.lineTo(e.offsetX, e.offsetY);
-		ctx.lineTo(prevMouseX * 2 - e.offsetX, e.offsetY);
-		ctx.closePath();
-		fillColor?.checked ? ctx.fill() : ctx.stroke();
+		backgroundImage.onload = () => {
+			ctx!.drawImage(backgroundImage, 0, 0, canvas!.width, canvas!.height);
+			ctx!.fillStyle = selectedColor;
+		};
 	};
 
 	const startDraw = (e: MouseEvent) => {
-		if (!ctx) return;
-		isDrawing = true;
-		prevMouseX = e.offsetX;
-		prevMouseY = e.offsetY;
+	if (!ctx) return;
+	isDrawing = true;
+	prevMouseX = e.offsetX;
+	prevMouseY = e.offsetY;
+	ctx.beginPath();
+	ctx.lineWidth = brushWidth;
+	ctx.strokeStyle = selectedColor;
+	ctx.fillStyle = selectedColor;
+	snapshot = ctx.getImageData(0, 0, canvas!.width, canvas!.height);
+};
+
+const drawing = (e: MouseEvent) => {
+	if (!isDrawing || !ctx) return;
+	ctx.putImageData(snapshot, 0, 0);
+
+	// Dibuja una línea recta desde el punto inicial hasta el punto actual
+	if (selectedTool === 'brush') {
 		ctx.beginPath();
-		ctx.lineWidth = brushWidth;
-		ctx.strokeStyle = selectedColor;
-		ctx.fillStyle = selectedColor;
-		snapshot = ctx.getImageData(0, 0, canvas!.width, canvas!.height);
-	};
+		ctx.moveTo(prevMouseX, prevMouseY); // Punto inicial
+		ctx.lineTo(e.offsetX, e.offsetY);   // Punto actual (fin de la línea)
+		ctx.stroke();
+	}
 
-	const drawing = (e: MouseEvent) => {
-		if (!isDrawing || !ctx) return;
-		ctx.putImageData(snapshot, 0, 0);
-
-		if (selectedTool === 'brush' || selectedTool === 'eraser') {
+	if (selectedTool === 'eraser') {
 			ctx.strokeStyle = selectedTool === 'eraser' ? '#fff' : selectedColor;
 			ctx.lineTo(e.offsetX, e.offsetY);
 			ctx.stroke();
-		} else if (selectedTool === 'rectangle') {
-			drawRect(e);
-		} else if (selectedTool === 'circle') {
-			drawCircle(e);
-		} else {
-			drawTriangle(e);
 		}
-	};
+};
+
+const endDraw = () => {
+	isDrawing = false;
+};
+
+// Actualiza los eventos para incluir endDraw cuando sueltes el mouse
+onMount(() => {
+	canvas?.addEventListener('mousedown', startDraw);
+	canvas?.addEventListener('mousemove', drawing);
+	canvas?.addEventListener('mouseup', endDraw);
+	canvas?.addEventListener('mouseleave', endDraw);
+});
+
 
 	onMount(() => {
 		canvas = document.querySelector('canvas');
@@ -199,58 +190,31 @@
 	});
 </script>
 
-<svelte:head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Historia del Arte</title>
-</svelte:head>
-
 <Nav levelNumber={3} position="square-1" />
 
 <div id="modal" class="modal">
 	<div class="modal-content">
 		<span class="close">&times;</span>
-		<img src={prehistorico} alt="" class="modal-image" />
-		<p><strong>Objetivo:</strong> Intenta recrear esta imagen.</p>
+		<img src={habitacion} alt="" class="modal-image" />
+		<p><strong>Objetivo:</strong> Intenta recrear esta imagen usando solo lineas.</p>
 	</div>
 </div>
 <main>
 	<div class="container">
 		<section class="tools-board">
 			<div class="row">
-				<label class="title" for="">Figuras</label>
-				<ul class="options">
-					<li class="option tool" id="rectangle">
-						<img src={ rectangle } alt="" />
-						<span>Rectángulo</span>
-					</li>
-					<li class="option tool" id="circle">
-						<img src={ circle } alt="" />
-						<span>Círculo</span>
-					</li>
-					<li class="option tool" id="triangle">
-						<img src={ triangle } alt="" />
-						<span>Triángulo</span>
-					</li>
-					<li class="option">
-						<input type="checkbox" id="fill-color" />
-						<label for="fill-color">Rellenar figura</label>
-					</li>
-				</ul>
-			</div>
-			<div class="row">
 				<label class="title" for="">Opciones</label>
 				<ul class="options">
 					<li class="option active tool" id="brush">
-						<img src={ brush } alt="" />
-						<span>Pincel</span>
+						<img src={ line } alt="" />
+						<span>Linea</span>
 					</li>
 					<li class="option tool" id="eraser">
 						<img src={ eraser } alt="" />
 						<span>Borrador</span>
 					</li>
 					<li class="option">
-						<input type="range" id="size-slider" min="1" max="30" value="10" />
+						<input type="range" id="size-slider" min="1" max="30" value="3" />
 					</li>
 				</ul>
 			</div>
@@ -275,15 +239,10 @@
 			<canvas></canvas>
 		</section>
 	</div>
-	<div class="objective">
-		<img src={prehistorico} alt="" class="objective-image" />
-		<p><strong>Nota:</strong> Puedes ampliar la</p>
-		<p>imagen con solo apretarla.</p>
-	</div>
 </main>
 
 <a href="./4" data-sveltekit-reload data-sveltekit-preload-data="tap">
 	<Next />
 </a>
 
-<div class="level-info" id="level-info"></div>
+
