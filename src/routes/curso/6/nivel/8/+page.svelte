@@ -29,7 +29,7 @@
 	<a href="https://www.youtube.com/watch/L5q7za0IXMI">Ver en Youtube</a>
 </div>
 
-<a href="/ingreso-cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">
+<a href="./certificado" data-sveltekit-reload data-sveltekit-preload-data="tap">
 	<Next />
 </a>
 

@@ -153,11 +153,6 @@ nav {
     border-radius: 8px;
 }
 
-.course {
-    padding: 20px 0;
-    margin-bottom: 20px;
-}
-
 .course h2 {
     margin: 0;
     color: #000000;
@@ -166,6 +161,25 @@ nav {
 .course p {
     margin: 10px 0;
     color: #555;
+}
+
+.course {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.course-image {
+  width: 550px;
+  height: 150px;
+  opacity: 0.4; 
+  margin-left: 20px; 
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 button {

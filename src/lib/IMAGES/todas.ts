@@ -27,6 +27,16 @@ import homero from './homero.jpg';
 import frutas from './cesto-de-frutas.jpg'
 import habitacion from './habitacion.jpg'
 import torso from './torso.jpg'
+import historia from './historia.png'
+import dibujo from './dibujo.png'
+import puntillismo from './puntillismo.png'
+import pixel from './pixel.png'
+import anatomia from './anatomia.png'
+import perspectiva from './perspectiva.png'
+import c1 from './c1.png'
+import c2 from './c2.png'
+import c3 from './c3.png'
+import c4 from './c4.png'
 
 export {
 	Uno,
@@ -57,5 +67,15 @@ export {
 	homero,
 	frutas,
 	habitacion,
-	torso
+	torso,
+	historia,
+	dibujo,
+	puntillismo,
+	pixel,
+	anatomia,
+	perspectiva,
+	c1,
+	c2,
+	c3,
+	c4
 };

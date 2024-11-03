@@ -64,10 +64,14 @@
 <div class="container" id="coursesContainer">
 	{#each filteredCourses as course}
 		<div class="course">
-			<h2>{course.title}</h2>
-			<p>{course.description}</p>
-			<button class="button" on:click={() => (window.location.href = course.link)}>Ver curso</button
-			>
+			<div class="course-content">
+				<h2>{course.title}</h2>
+				<p>{course.description}</p>
+				<button class="button" on:click={() => (window.location.href = course.link)}
+					>Ver curso</button
+				>
+			</div>
+				<img src={course.image} alt="" class="course-image" />
 		</div>
 	{/each}
 
