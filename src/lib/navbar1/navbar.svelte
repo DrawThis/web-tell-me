@@ -132,7 +132,7 @@
 				<div class="bar3"></div>
 			</div>
 			<div class="side-menu" id="sideMenu">
-				<a href="/bibliografias">Bibliografías</a>
+				<a href="/bibliografias" data-sveltekit-reload data-sveltekit-preload-data="tap">Bibliografías</a>
 				<a href="/ingreso-cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">Volver</a>
 			</div>
 		</nav>

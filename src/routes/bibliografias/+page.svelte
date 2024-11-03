@@ -2,12 +2,20 @@
 	import '$lib/CSS/bibliografias.css';
 </script>
 
-<header><h1>Bliografias</h1></header>
+
+<div class="header-container">
+	<div class="header">
+		<h1>bibliografias</h1>
+	</div>
+</div>
+
+<br>
+<br>
+<br>
+
 <div class="bibliografias">
-	<br />
 	<h2>Historia del Arte</h2>
 
-	<br />
 	<a href="https://www.youtube.com/embed/rUHxLrZwSIY">https://www.youtube.com/embed/rUHxLrZwSIY</a>
 	<a
 		href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4WZCm3Ok5GfDGixoRraKa8yYdGl90uKMGig&s"
@@ -95,7 +103,6 @@
 		>https://winegogh.es/wp-content/uploads/2023/05/2019.084-zhang-peili-expand-constantly-1024x681.jpg.webp</a
 	>
 
-	<br />
 	<h2>Dibujo Básico</h2>
 	<a href="https://www.youtube.com/embed/WZa-pUJDqtI?si=0YJx_s1nSrOY8zKR"
 		>https://www.youtube.com/embed/WZa-pUJDqtI?si=0YJx_s1nSrOY8zKR</a
