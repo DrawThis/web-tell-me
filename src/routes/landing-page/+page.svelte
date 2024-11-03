@@ -211,7 +211,7 @@
 					</div>
 					<h3>Materiales Didácticos:</h3>
 					<p>
-						Guías, videos, tutoriales y referencias visuales que los usuarios usen complementar las lecciones. Estos materiales son totalmente gratuitos y accesibles para todos.
+						Guías, videos, tutoriales y referencias visuales que los usuarios usen para completar las lecciones. Estos materiales son totalmente gratuitos y accesibles para todos.
 					</p>
 				</div>
 				<div class="image">
