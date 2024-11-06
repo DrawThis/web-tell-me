@@ -2,6 +2,7 @@
 	import '$lib/CSS/inicio.css';
 	import logo from '$lib/IMAGES/IMG-20231013-WA0009.jpg';
 	import Icon from '@iconify/svelte';
+	export let form: { invalid?: boolean; credentials?: boolean } = {};
 
 	let isPopupVisible1 = false;
 	let Terms = false;
@@ -46,7 +47,7 @@
 
 		<!--FORMULARIO DE INICIO DE SESIÓN-->
 
-		<form method="post">
+		<form action="?/login" method="POST">
 			<h1>Inicia Sesión</h1>
 			<div class="input-box">
 				<label class="input-label" for="emailInput">Correo Electrónico</label>
@@ -87,12 +88,20 @@
 					>
 				</div>
 			</div>
-			<button class="send">Inicio</button>
+			<button class="send" type="submit">Inicio</button> <!--BOTON DE INICIO DE SESIÓN-->
 			<span class="line">Ó</span>
 			<div class="social-container">
 				<a href="#incognito" class="social"><Icon icon="line-md:person-search-filled" class="e"/>ㅤModo Incógnito</a>
 			</div>
 			<p class="draw">DrawThis <span>© 2024</span></p>
+
+			{#if form?.invalid}
+				<p class="error">Se requiere nombre de usuario y contraseña</p>
+			{/if}
+
+			{#if form?.credentials}
+				<p class="error">Usuario o contraseña invalido</p>
+			{/if}
 		</form>
 	</div>
 
@@ -101,7 +110,7 @@
 
 		<!--FORMULARIO DE REGISTRO-->
 
-		<form method="post">
+		<form action="?/register" method="POST">
 			<h1>Registrate</h1>
 			<div class="input-box">
 				<label class="input-label" for="usernameInput">Usuario</label>
@@ -121,7 +130,7 @@
 				<label class="input-label" for="registerEmailInput">Correo Electrónico</label>
 				<input
 					type="email"
-					name="register_email"
+					name="email"
 					placeholder="example@gmail.com"
 					required
 					id="registerEmailInput"
@@ -134,7 +143,7 @@
 				<input
 					bind:this={passwordInput2}
 					type={passwordType2}
-					name="register_password"
+					name="password"
 					placeholder="Password123"
 					required
 					minlength="4"
@@ -158,7 +167,7 @@
 				<span class="small-text">Acepto los</span><a href="#terms" on:click={togglePopup1}
 					>Términos y Condiciones</a>
 			</div>
-			<button class="send">Registro</button>
+			<button class="send" type="submit">Registro</button> <!--BOTON DE REGISTRO-->
 			<p class="draw">DrawThis <span>© 2024</span></p>
 		</form>
 	</div>

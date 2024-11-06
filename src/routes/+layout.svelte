@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	
 	// PANTALLA DE CARGA
 	let isLoading = true;
 

@@ -1,56 +1,43 @@
 -- Current sql file was generated after introspecting the database
 -- If you want to run this migration please uncomment this code before executing migrations
 /*
-CREATE TABLE `users` (
-	`id` integer PRIMARY KEY,
-	`username` text,
-	`email` text NOT NULL,
-	`password` text NOT NULL,
-	`registration_date` numeric DEFAULT (datetime('now', '-5 hours'))
+-- Tabla user
+CREATE TABLE user (
+	id TEXT PRIMARY KEY NOT NULL,
+	email TEXT NOT NULL UNIQUE,
+	password TEXT NOT NULL
 );
---> statement-breakpoint
-CREATE TABLE `contact` (
-	`id` integer PRIMARY KEY,
-	`first_name` text NOT NULL,
-	`second_name` text,
-	`last_name` text NOT NULL,
-	`gender` text NOT NULL,
-	`email` text NOT NULL,
-	`age` numeric NOT NULL,
-	`delivery_date` numeric DEFAULT (datetime('now', '-5 hours'))
+
+-- Índice único para el campo email en la tabla user
+CREATE UNIQUE INDEX user_email_unique ON user (email);
+
+-- Tabla session
+CREATE TABLE session (
+	id TEXT PRIMARY KEY NOT NULL,
+	user_id TEXT NOT NULL,
+	expires_at INTEGER NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES user(id)
 );
---> statement-breakpoint
-CREATE TABLE `themes` (
-	`id` integer PRIMARY KEY,
-	`historia` text,
-	`dibujo` text,
-	`puntillismo` text,
-	`tangram` text,
-	`perspectiva` text,
-	`anatomia` text,
-	`creatividad` text
+
+-- Tabla users
+CREATE TABLE users (
+	id INTEGER PRIMARY KEY,
+	username TEXT NOT NULL,
+	email TEXT
 );
---> statement-breakpoint
-CREATE TABLE `levels` (
-	`id` integer PRIMARY KEY,
-	`themes_id` integer NOT NULL,
-	FOREIGN KEY (`themes_id`) REFERENCES `themes`(`id`) ON UPDATE no action ON DELETE no action
+
+-- Tabla usuarios
+CREATE TABLE usuarios (
+	id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+	username TEXT NOT NULL,
+	email TEXT NOT NULL,
+	rol TEXT NOT NULL,
+	password TEXT,
+	token TEXT
 );
---> statement-breakpoint
-CREATE TABLE `user_levels` (
-	`users_id` integer NOT NULL,
-	`levels_id` integer NOT NULL,
-	PRIMARY KEY(`users_id`, `levels_id`),
-	FOREIGN KEY (`levels_id`) REFERENCES `levels`(`id`) ON UPDATE no action ON DELETE no action,
-	FOREIGN KEY (`users_id`) REFERENCES `users`(`id`) ON UPDATE no action ON DELETE no action
-);
---> statement-breakpoint
-CREATE TABLE `themes_users` (
-	`users_id` integer NOT NULL,
-	`themes_id` integer NOT NULL,
-	PRIMARY KEY(`users_id`, `themes_id`),
-	FOREIGN KEY (`themes_id`) REFERENCES `themes`(`id`) ON UPDATE no action ON DELETE no action,
-	FOREIGN KEY (`users_id`) REFERENCES `users`(`id`) ON UPDATE no action ON DELETE no action
-);
+
+-- Relaciones
+-- Relación entre session y user
+-- Esta relación es gestionada por el FOREIGN KEY en session que referencia a user
 
 */

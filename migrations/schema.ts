@@ -1,46 +1,41 @@
-import { sqliteTable, AnySQLiteColumn, integer, text, numeric, foreignKey, primaryKey } from "drizzle-orm/sqlite-core"
-  import { sql } from "drizzle-orm"
+import { toSnakeCase } from 'drizzle-orm/casing';
+import { sqliteTable, integer, text, uniqueIndex } from 'drizzle-orm/sqlite-core';
 
-export const users = sqliteTable("users", {
-	id: integer("id").primaryKey(),
-	username: text("username"),
-	email: text("email").notNull(),
-	password: text("password").notNull(),
-	registrationDate: numeric("registration_date").default(sql`(datetime('now', '-5 hours'))`),
+export const session = sqliteTable('session', {
+	id: text('id').primaryKey().notNull(),
+	userId: text('user_id')
+		.notNull()
+		.references(() => user.id),
+	expiresAt: integer('expires_at').notNull()
 });
 
-export const themes = sqliteTable("themes", {
-	id: integer("id").primaryKey(),
-	historia: text("historia"),
-	dibujo: text("dibujo"),
-	puntillismo: text("puntillismo"),
-	tangram: text("tangram"),
-	perspectiva: text("perspectiva"),
-	anatomia: text("anatomia"),
-	creatividad: text("creatividad"),
-});
-
-export const levels = sqliteTable("levels", {
-	id: integer("id").primaryKey(),
-	themesId: integer("themes_id").notNull().references(() => themes.id),
-});
-
-export const userLevels = sqliteTable("user_levels", {
-	usersId: integer("users_id").notNull().references(() => users.id),
-	levelsId: integer("levels_id").notNull().references(() => levels.id),
-},
-(table) => {
-	return {
-		pk0: primaryKey({ columns: [table.usersId, table.levelsId], name: "user_levels_users_id_levels_id_pk"})
+export const user = sqliteTable(
+	'user',
+	{
+		id: text('id').primaryKey().notNull(),
+		email: text('email').notNull().unique(),
+		password: text('password').notNull()
+	},
+	(table) => {
+		return {
+			emailUnique: uniqueIndex('user_email_unique').on(table.email)
+		};
 	}
+);
+
+export const users = sqliteTable('users', {
+	id: integer('id').primaryKey(),
+	username: text('username').notNull(),
+	email: text('email')
 });
 
-export const themesUsers = sqliteTable("themes_users", {
-	usersId: integer("users_id").notNull().references(() => users.id),
-	themesId: integer("themes_id").notNull().references(() => themes.id),
-},
-(table) => {
-	return {
-		pk0: primaryKey({ columns: [table.usersId, table.themesId], name: "themes_users_users_id_themes_id_pk"})
-	}
+export const usuarios =  sqliteTable('usuarios', {
+	id: text('id')
+	.primaryKey()
+	.$defaultFn(() => crypto.randomUUID()),
+	username: text('username').notNull(),
+	email: text('email').notNull(),
+	rol: text('rol').notNull(),
+	password: text('password'),
+	token: text('token'),
 });
