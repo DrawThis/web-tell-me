@@ -2,7 +2,7 @@
 	import '$lib/CSS/inicio.css';
 	import logo from '$lib/IMAGES/IMG-20231013-WA0009.jpg';
 	import Icon from '@iconify/svelte';
-	export let form: { invalid?: boolean; credentials?: boolean } = {};
+	export let form: { invalid?: boolean; credentials?: boolean, user?: string; } = {};
 
 	let isPopupVisible1 = false;
 	let Terms = false;
@@ -101,6 +101,10 @@
 
 			{#if form?.credentials}
 				<p class="error">Usuario o contraseña invalido</p>
+			{/if}
+
+			{#if form?.user}
+				<p class="error">El correo ya existe, vuelve a registrarte con otro correo</p>
 			{/if}
 		</form>
 	</div>
