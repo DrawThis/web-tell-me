@@ -1,19 +1,13 @@
 
 import type { Cookies } from '@sveltejs/kit';  
-import { fail, redirect } from '@sveltejs/kit';  
-import bcrypt from 'bcrypt';  
+import { fail, redirect } from '@sveltejs/kit'; 
 import crypto from 'crypto';  
 import type { Actions } from './$types';
 import { db } from '$lib/server/database/client';  
 import { usuarios } from '$lib/server/database/data';  
+import bcrypt from 'bcryptjs';
 import { eq } from 'drizzle-orm';  
 import type { RequestEvent } from '@sveltejs/kit'; 
-
-export const load = async ({ locals }) => {
-	if (locals.user) {
-		throw redirect(307, '/landing-page'); 
-	}
-}
 
 export const actions: Actions = {
 	login: async ({ request, cookies }: { request: Request; cookies: Cookies }) => {
