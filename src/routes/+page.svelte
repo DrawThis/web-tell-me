@@ -2,7 +2,7 @@
 	import '$lib/CSS/inicio.css';
 	import logo from '$lib/IMAGES/IMG-20231013-WA0009.jpg';
 	import Icon from '@iconify/svelte';
-	export let form: { invalid?: boolean; credentials?: boolean, user?: string; } = {};
+	export let form: { credentials?: boolean; user?: string } = {};
 
 	let isPopupVisible1 = false;
 	let Terms = false;
@@ -35,11 +35,33 @@
 			passwordType2 = passwordType2 === 'password' ? 'text' : 'password';
 		}
 	}
+
+	let showError = true;
+
+	function closeError() {
+		showError = false;
+	}
 </script>
 
 <svelte:head>
 	<title>Bienvenido a Draw This</title>
 </svelte:head>
+
+{#if form?.credentials && showError}
+	<div class="error">
+		<Icon icon="carbon:warning" class="error-icon" />
+		<div class="error-title">Correo o contraseña invalido</div>
+		<Icon icon="material-symbols:close" class="error-close" onclick={closeError} />
+	</div>
+{/if}
+
+{#if form?.user && showError}
+	<div class="error">
+		<Icon icon="carbon:warning" class="error-icon" />
+		<div class="error-title">El correo ya se encuentra registrado</div>
+		<Icon icon="material-symbols:close" class="error-close" onclick={closeError} />
+	</div>
+{/if}
 
 <div class="container" class:right-panel-active={rightPanelActive}>
 	<div class="form-container login-container">
@@ -75,7 +97,8 @@
 					on:keypress={(e) => e.key === 'Enter' && togglePassword(1)}
 					><Icon
 						icon={passwordType1 === 'password' ? 'line-md:watch-off' : 'line-md:watch'}
-					/></button>
+					/></button
+				>
 			</div>
 			<div class="content">
 				<div class="checkbox">
@@ -88,24 +111,15 @@
 					>
 				</div>
 			</div>
-			<button class="send" type="submit">Inicio</button> <!--BOTON DE INICIO DE SESIÓN-->
+			<button class="send" type="submit">Inicio</button>
+			<!--BOTON DE INICIO DE SESIÓN-->
 			<span class="line">Ó</span>
 			<div class="social-container">
-				<a href="#incognito" class="social"><Icon icon="line-md:person-search-filled" class="e"/>ㅤModo Incógnito</a>
+				<a href="/landing-page" class="social" data-sveltekit-reload data-sveltekit-preload-data="tap"
+					><Icon icon="line-md:person-search-filled" class="e" />ㅤModo Invitado</a
+				>
 			</div>
 			<p class="draw">DrawThis <span>© 2024</span></p>
-
-			{#if form?.invalid}
-				<p class="error">Se requiere nombre de usuario y contraseña</p>
-			{/if}
-
-			{#if form?.credentials}
-				<p class="error">Usuario o contraseña invalido</p>
-			{/if}
-
-			{#if form?.user}
-				<p class="error">El correo ya existe, vuelve a registrarte con otro correo</p>
-			{/if}
 		</form>
 	</div>
 
@@ -124,7 +138,7 @@
 					placeholder="User123"
 					required
 					minlength="4"
-					maxlength="20"
+					maxlength="15"
 					id="usernameInput"
 				/>
 				<Icon icon="line-md:person-twotone" class="i" />
@@ -162,16 +176,19 @@
 					on:keypress={(e) => e.key === 'Enter' && togglePassword(2)}
 					><Icon
 						icon={passwordType2 === 'password' ? 'line-md:watch-off' : 'line-md:watch'}
-					/></button>
+					/></button
+				>
 			</div>
 
 			<div class="terms-checkbox">
 				<input type="checkbox" id="terms-checkbox" required bind:checked={Terms} />
 				<label for="terms-checkbox"></label>
 				<span class="small-text">Acepto los</span><a href="#terms" on:click={togglePopup1}
-					>Términos y Condiciones</a>
+					>Términos y Condiciones</a
+				>
 			</div>
-			<button class="send" type="submit">Registro</button> <!--BOTON DE REGISTRO-->
+			<button class="send" type="submit">Registro</button>
+			<!--BOTON DE REGISTRO-->
 			<p class="draw">DrawThis <span>© 2024</span></p>
 		</form>
 	</div>
@@ -182,7 +199,7 @@
 				<h1 class="title">Bienvenido a <br /> Draw This</h1>
 				<p>Sí ya tienes una cuenta, inicia sesión aquí</p>
 				<button class="ghost" on:click={login}>
-					<Icon icon="line-md:chevron-small-triple-left" class="a"/>
+					<Icon icon="line-md:chevron-small-triple-left" class="a" />
 					Inicia
 				</button>
 			</div>

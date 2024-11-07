@@ -1,9 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import '$lib/CSS/landing page.css';
+
+	let username: string | null | undefined;
+
+	onMount(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    username = urlParams.get('username');
+  	});
+
 	import {
 		logo,
-		logo1,
+		logo1,	
 		logo2,
 		logo3,
 		number1,
@@ -16,7 +24,7 @@
 	import { slides } from '$lib/info/info';
 	import Icon from '@iconify/svelte';
 
-	let currentSlide = 3;
+	let currentSlide = 0;
 
 	onMount(() => {
 		const interval = setInterval(() => {
@@ -90,7 +98,7 @@
 <div class="header">
 	<div class="contenedor">
 		<div class="header-texto">
-			<h1>Bienvenido a <br /> <span>Draw This</span></h1>
+			<h1>Bienvenido a <br /> <span>Draw This</span>, <br /> <div class="user">{username || 'Invitado'}!</div></h1>
 			<br />
 			<p>¡La Página que sacará tus dotes<br /> artísticos y los pondra a prueba!</p>
 			<br />

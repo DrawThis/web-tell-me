@@ -123,6 +123,7 @@ button.custom-button:hover::after {
 
 .header-texto {
 	padding: 10px 10%;
+	padding-right: 5px;
 	font-size: 24px;
 }
 
@@ -155,12 +156,16 @@ button.custom-button:hover::after {
 	}
 }
 
+.user {
+	font-size: 50px;
+}
+
 #slider {
 	position: relative;
 	width: 350px;
 	height: 400px;
 	margin: 70px;
-	margin-right: 160px;
+	margin-right: 180px;
 	transform-style: preserve-3d;
 	perspective: 1400px;
 }

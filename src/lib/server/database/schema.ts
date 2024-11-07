@@ -1,14 +1,6 @@
 import { toSnakeCase } from 'drizzle-orm/casing';
 import { sqliteTable, integer, text, uniqueIndex } from 'drizzle-orm/sqlite-core';
 
-export const session = sqliteTable('session', {
-	id: text('id').primaryKey().notNull(),
-	userId: text('user_id')
-		.notNull()
-		.references(() => user.id),
-	expiresAt: integer('expires_at').notNull()
-});
-
 export const user = sqliteTable(
 	'user',
 	{

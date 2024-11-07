@@ -1,4 +1,3 @@
-
 import type { Cookies } from '@sveltejs/kit';  
 import { fail, redirect } from '@sveltejs/kit'; 
 import crypto from 'crypto';  
@@ -40,6 +39,7 @@ export const actions: Actions = {
 		}
 
 		const authenticatedUser = crypto.randomUUID();
+		const username = user[0].username; // Nombre de usuario de la base de datos
 
 		await db
 			.update(usuarios)
@@ -54,7 +54,7 @@ export const actions: Actions = {
 		});
 
 		// redirect the user
-		redirect(302, '/landing-page');
+		throw redirect(302, `/landing-page?username=${username}`);
 	},
 
 	register: async ({ request }: RequestEvent) => {
@@ -88,6 +88,6 @@ export const actions: Actions = {
           token: crypto.randomUUID(),
         })
         
-        redirect(303, '/landing-page')
+        throw redirect(303, `/landing-page?username=${data.username}`);
       }
 };
