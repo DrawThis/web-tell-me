@@ -102,7 +102,7 @@
 			</div>
 			<div class="content">
 				<div class="checkbox">
-					<input type="checkbox" id="checkbox" />
+					<input type="checkbox" id="checkbox" name="remember"/>
 					<label for="checkbox">Recuerdame</label>
 				</div>
 				<div class="pass-link">
