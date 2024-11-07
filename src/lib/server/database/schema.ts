@@ -1,6 +1,14 @@
 import { toSnakeCase } from 'drizzle-orm/casing';
 import { sqliteTable, integer, text, uniqueIndex } from 'drizzle-orm/sqlite-core';
 
+export const session = sqliteTable('session', {
+	id: text('id').primaryKey().notNull(),
+	userId: text('user_id')
+		.notNull()
+		.references(() => user.id),
+	expiresAt: integer('expires_at').notNull()
+});
+
 export const user = sqliteTable(
 	'user',
 	{
@@ -8,9 +16,9 @@ export const user = sqliteTable(
 		email: text('email').notNull().unique(),
 		password: text('password').notNull()
 	},
-	(schema) => {
+	(table) => {
 		return {
-			emailUnique: uniqueIndex('user_email_unique').on(schema.email)
+			emailUnique: uniqueIndex('user_email_unique').on(table.email)
 		};
 	}
 );
@@ -31,4 +39,3 @@ export const usuarios =  sqliteTable('usuarios', {
 	password: text('password'),
 	token: text('token'),
 });
-
