@@ -55,7 +55,7 @@
 {#if form?.credentials && showError}
 	<div class="error">
 		<Icon icon="carbon:warning" class="error-icon" />
-		<div class="error-title">Correo o contraseña invalido</div>
+		<div class="error-title">Correo o contraseña inválido</div>
 		<Icon icon="material-symbols:close" class="error-close" onclick={closeError} />
 	</div>
 {/if}
