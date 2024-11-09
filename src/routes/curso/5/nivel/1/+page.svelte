@@ -2,6 +2,7 @@
 	import './nivel1.css';
 	import Nav from '$lib/navbar5/navbar.svelte';
 	import Next from '$lib/button.svelte';
+
 	import { onMount } from 'svelte';
 
 	onMount(() => {
