@@ -5,6 +5,7 @@
 	export let form: { credentials?: boolean; user?: string } = {};
 
 	let isPopupVisible1 = false;
+	let isPopupVisible2 = false;
 	let Terms = false;
 	let rightPanelActive = false;
 
@@ -18,6 +19,10 @@
 		if (!isPopupVisible1) {
 			Terms = true;
 		}
+	}
+
+	function togglePopup2() {
+		isPopupVisible2 = !isPopupVisible2;
 	}
 
 	function register() {
@@ -111,11 +116,10 @@
 					>
 				</div>
 			</div>
-			<button class="send" type="submit">Inicio</button>
-			<!--BOTON DE INICIO DE SESIÓN-->
+			<button class="send" type="submit">Inicio</button> <!--BOTON DE INICIO DE SESIÓN-->
 			<span class="line">Ó</span>
 			<div class="social-container">
-				<a href="/landing-page" class="social" data-sveltekit-reload data-sveltekit-preload-data="tap"
+				<a href="#guest" class="social" on:click={togglePopup2} data-sveltekit-reload data-sveltekit-preload-data="tap"
 					><Icon icon="line-md:person-search-filled" class="e" />ㅤModo Invitado</a
 				>
 			</div>
@@ -187,8 +191,9 @@
 					>Términos y Condiciones</a
 				>
 			</div>
-			<button class="send" type="submit">Registro</button>
-			<!--BOTON DE REGISTRO-->
+			<button class="send" type="submit">Registro</button> <!--BOTON DE REGISTRO-->
+			<br>
+			<br>
 			<p class="draw">DrawThis <span>© 2024</span></p>
 		</form>
 	</div>
@@ -291,3 +296,40 @@
 		</div>
 	</div>
 {/if}
+
+{#if isPopupVisible2}
+	<div id="myPopup2" class="popup show-popup">
+		<div class="popup-content">
+			<div class="header-card">
+				<h2>¿Estas seguro de usar el Modo Invitado?</h2>
+				<span
+					role="button"
+					class="close"
+					on:click={togglePopup2}
+					tabindex="0"
+					on:keypress={(e) => e.key === 'Enter' && togglePopup2()}>&times;</span
+				>
+			</div>
+			<div class="body-card">
+
+				<p>
+					Ten en cuenta que tendrás acceso limitado a la plataforma y a los cursos, algunas de estas limitaciones son:
+				</p>
+
+				<ul>
+					<li><p>Acceso muy limitado a los cursos.</p></li>
+					<li><p>Tu sesión no será guardada, por lo que tendrás que iniciar sesión nuevamente.</p></li>
+					<li><p>No tendrás acceso a los materiales creativos</p></li>
+					<li><p>Serás reconocido como "Invitado" y no por tu nombre de usuario</p></li>
+				</ul>
+			</div>
+			<footer class="popup-footer">
+				<a href="/landing-page" data-sveltekit-reload data-sveltekit-preload-data="tap">
+					<button class="button">Acepto</button>
+				</a>
+			</footer>
+		</div>
+	</div>
+{/if}
+
+

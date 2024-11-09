@@ -281,11 +281,15 @@ main {
 .second,
 .last {
 	width: 100%;
-	padding: 60px 40px;
+	padding: 20px 40px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+
+.second h2 {
+	padding: 10px;
 }
 
 .second > h2,
@@ -299,7 +303,6 @@ main {
 
 .second > p,
 .last > p {
-	padding: 15px 100px;
 	text-align: center;
 	width: 80%;
 }
@@ -309,7 +312,7 @@ main {
 	width: 100%;
 	display: inherit;
 	justify-content: space-between;
-	padding: 100px 0;
+	padding: 70px 0;
 }
 
 .second .cards .card {
@@ -332,7 +335,7 @@ main {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 150px 0;
+	margin: 80px 0;
 	padding: 50px;
 }
 
@@ -434,72 +437,68 @@ main {
 	transform: translateY(-10px);
 }
 
-.last {
-  margin-bottom: 100px;
-}
-
-.faq-header{
-  font-size: 42px;
-  border-bottom: 1px solid #0202025e;
-  padding: 24px;
+.faq-header {
+	font-size: 42px;
+	border-bottom: 1px solid #0202025e;
+	padding: 24px;
 }
 
 .faq-question {
-  padding: 20px 0;
-  border-bottom: 1px solid #0202025e;
+	padding: 20px 0;
+	border-bottom: 1px solid #0202025e;
 }
 
 .panel-title {
-  font-size: 18px;
-  width: 100%;
-  position: relative;
-  margin: 0;
-  padding: 10px 10px 0 48px;
-  display: block;
-  cursor: pointer;
+	font-size: 18px;
+	width: 100%;
+	position: relative;
+	margin: 0;
+	padding: 10px 10px 0 48px;
+	display: block;
+	cursor: pointer;
 }
 
 .panel-content {
-  font-size: 20px;
-  text-align: justify;
-  line-height: 26px;
-  padding: 0px 14px;
-  margin: 0 40px;
-  height: 0;
-  overflow: hidden;
-  z-index: -1;
-  position: relative;
-  opacity: 0;
-  transition: 0.4s ease;
+	font-size: 20px;
+	text-align: justify;
+	line-height: 26px;
+	padding: 0px 14px;
+	margin: 0 40px;
+	height: 0;
+	overflow: hidden;
+	z-index: -1;
+	position: relative;
+	opacity: 0;
+	transition: 0.4s ease;
 }
 
-.panel:checked ~ .panel-content{
-  height: auto;
-  opacity: 1;
-  padding: 14px;
+.panel:checked ~ .panel-content {
+	height: auto;
+	opacity: 1;
+	padding: 14px;
 }
 
 .plus {
-  position: absolute;
-  margin-left: 20px;
-  margin-top: 4px;
-  z-index: 5;
-  font-size: 30px;
-  line-height: 100%;
-  transition: 0.2s ease;
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 4px;
+	z-index: 5;
+	font-size: 30px;
+	line-height: 100%;
+	transition: 0.2s ease;
 }
 
 .panel:checked ~ .plus {
-  transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .panel {
-  display: none;
+	display: none;
 }
 
 .text {
 	position: relative;
-	margin-top: 200px;
+	margin-top: 80px;
 }
 
 .card-2 {

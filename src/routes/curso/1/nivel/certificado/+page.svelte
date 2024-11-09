@@ -5,6 +5,8 @@
 	import html2canvas from 'html2canvas';
 	import Icon from '@iconify/svelte';
 
+	export let data: { username: string };
+
 	const getTodayDate = (): string => {
 		const today = new Date();
 		const day = today.getDate().toString().padStart(2, '0');
@@ -245,7 +247,7 @@
 	<img src={logo} alt="" />
 	<h1 class="header">Certificado</h1>
 	<h2 class="sub-header">De reconocimiento a:</h2>
-	<p class="recipient" contenteditable="true">[Escribe tu nombre aquí]</p>
+	<p class="recipient" contenteditable="true">{data.username || 'Invitado'}</p>
 	<p class="certificate-body">
 		Por haber concluido de manera satisfactoria el curso <strong>Historia del Arte</strong>,
 		impartido por la página de Draw This.
